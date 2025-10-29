@@ -1,19 +1,6 @@
-from flask import Flask
+from app import create_app
 
+app = create_app()
 
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return 'Hello World!'
-
-@app.route('/about')
-def about():
-    return 'About this page'
-
-@app.route('/user/<username>')
-def show_user_profile(username):
-    return f'User: {username}'
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
