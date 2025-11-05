@@ -12,10 +12,6 @@ def registration_driver():
         name = request.form.get("name")
         email = request.form.get("email")
         password = request.form.get("password")
-
-
-
-
         if not (name and email and password):
             flash("Tutti i campi sono obbligatori.")
             return render_template("driverLogin.html")
@@ -27,16 +23,15 @@ def registration_driver():
 
 @registration_bp.route("/registration_passenger")
 def registration_passenger():
-        if request.method == "POST":
-            name = request.form.get("name")
-            email = request.form.get("email")
-            password = request.form.get("password")
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        password = request.form.get("password")
         if not (name and email and password):
             flash("Tutti i campi sono obbligatori.")
-            return render_template("driverRegistration.html")
+            return render_template("passsengerRegistration.html")
         driver = Driver(name, email, password)
         drivers.append(driver)
         flash("Registrazione avvenuta con successo!")
-        return redirect("/registration_driver")
-    
+        return redirect("/registration_passenger")
     return render_template("passengerLogin.html")
