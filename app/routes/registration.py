@@ -4,6 +4,8 @@ import json
 
 registration_bp = Blueprint("registration", __name__)
 
+# json.dumps()
+
 drivers = [] 
 
 @registration_bp.route("/registration_driver", methods=["GET", "POST"])
