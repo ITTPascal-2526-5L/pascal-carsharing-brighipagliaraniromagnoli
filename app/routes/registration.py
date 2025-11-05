@@ -4,6 +4,7 @@ registration_bp = Blueprint("registration", __name__)
 
 @registration_bp.route("/registration_driver")
 def registration_driver():
+    
     return render_template("index.html")
 
 @registration_bp.route("/registration_passenger")
