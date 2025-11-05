@@ -8,4 +8,5 @@ def registration_driver():
 
 @registration_bp.route("/registration_passenger")
 def registration_passenger():
+    
     return render_template("index.html")
