@@ -37,7 +37,7 @@ schools=[]
 @registration_bp.route("/registration_driver", methods=["GET", "POST"])
 def registration_driver():
     if request.method == "POST":
-        name = request.form.get("name")
+        name = request.form.get("nome")
         cognome = request.form.get("cognome")
         email = request.form.get("email")
         eta = request.form.get("eta")
@@ -63,10 +63,10 @@ def registration_driver():
         return redirect("/registration_driver")
     return render_template("driverLogin.html")
 
-@registration_bp.route("/registration_passenger")
+@registration_bp.route("/registration_passenger", methods=["GET", "POST"])
 def registration_passenger():
     if request.method == "POST":
-        name = request.form.get("name")
+        name = request.form.get("nome")
         cognome = request.form.get("cognome")
         email = request.form.get("email")
         eta = request.form.get("eta")
