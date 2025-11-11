@@ -38,12 +38,25 @@ schools=[]
 def registration_driver():
     if request.method == "POST":
         name = request.form.get("name")
+        cognome = request.form.get("cognome")
         email = request.form.get("email")
-        password = request.form.get("password")
-        if not (name and email and password):
+        eta = request.form.get("eta")
+        CF = request.form.get("CF")
+        IdPatente = request.form.get("Pat")
+        if not (name and email and eta and CF and IdPatente):
             flash("Tutti i campi sono obbligatori.")
             return render_template("driverLogin.html")
-        driver = Driver(name, email, password)
+        #driver = Driver(name, email, password)
+
+        driver = {
+            "nome": name,
+            "cognome": cognome,
+            "email": email,
+            "eta":eta,
+            "CF":CF,
+            "NrPatente":IdPatente
+        }
+
         #drivers.append(driver)
         save_to_json(driver, "driver.json")
         flash("Registrazione avvenuta con successo!")
@@ -54,12 +67,24 @@ def registration_driver():
 def registration_passenger():
     if request.method == "POST":
         name = request.form.get("name")
+        cognome = request.form.get("cognome")
         email = request.form.get("email")
-        password = request.form.get("password")
-        if not (name and email and password):
+        eta = request.form.get("eta")
+        CF = request.form.get("CF")
+        prelievo = request.form.get("prelievo")
+        
+        if not (name and email and eta and CF and prelievo):
             flash("Tutti i campi sono obbligatori.")
             return render_template("passsengerRegistration.html")
-        passenger = Passenger(name, email, password)
+        #passenger = Passenger(name, email, eta,CF,prelievo)
+        passenger = {
+            "nome": name,
+            "cognome": cognome,
+            "email": email,
+            "eta":eta,
+            "CF":CF,
+            "prelievo":prelievo
+        }
         save_to_json(passenger, "passenger.json")
         #passengers.append(passenger)
         flash("Registrazione avvenuta con successo!")
