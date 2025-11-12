@@ -10,10 +10,10 @@ registration_bp = Blueprint("registration", __name__)
 DATA_FOLDER = os.path.join(os.path.dirname(__file__), "..", "json")
 
 def save_to_json(data, filename):
-    #os.makedirs(DATA_FOLDER, exist_ok=True)
+
     filepath = os.path.join(DATA_FOLDER, filename)
 
-    # Se il file esiste, carica i dati esistenti
+
     if os.path.exists(filepath):
         with open(filepath, "r", encoding="utf-8") as f:
             try:
@@ -23,10 +23,8 @@ def save_to_json(data, filename):
     else:
         existing_data = []
 
-    # Aggiunge il nuovo record
     existing_data.append(data)
 
-    # Scrive nel file
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(existing_data, f, indent=4, ensure_ascii=False)
 
@@ -105,7 +103,6 @@ def registration_school():
             flash("Tutti i campi sono obbligatori.")
             return render_template("schoolLogin.html")
 
-        # Meglio salvare come dizionario, non lista
         school = {
             "nomeScuola": name,
             "indirizzo": ind,
@@ -117,5 +114,4 @@ def registration_school():
         flash("Registrazione avvenuta con successo!")
         return redirect("/registration_school")
 
-    # GET -> Mostra il form
     return render_template("schoolLogin.html")
