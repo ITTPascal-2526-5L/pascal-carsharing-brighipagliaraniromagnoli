@@ -43,7 +43,8 @@ def registration_driver():
         eta = request.form.get("eta")
         CF = request.form.get("CF")
         IdPatente = request.form.get("Pat")
-        if not (name and email and eta and CF and IdPatente):
+        password=request.form.get("password")
+        if not (name and email and eta and CF and IdPatente and password):
             flash("Tutti i campi sono obbligatori.")
             return render_template("driverLogin.html")
         #driver = Driver(name, email, password)
@@ -54,7 +55,8 @@ def registration_driver():
             "email": email,
             "eta":eta,
             "CF":CF,
-            "NrPatente":IdPatente
+            "NrPatente":IdPatente,
+            "password":password
         }
 
         #drivers.append(driver)
@@ -72,8 +74,9 @@ def registration_passenger():
         eta = request.form.get("eta")
         CF = request.form.get("CF")
         prelievo = request.form.get("prelievo")
+        password = request.form.get("password")
         
-        if not (name and email and eta and CF and prelievo):
+        if not (name and email and eta and CF and prelievo and password):
             flash("Tutti i campi sono obbligatori.")
             return render_template("passsengerRegistration.html")
         #passenger = Passenger(name, email, eta,CF,prelievo)
@@ -83,7 +86,8 @@ def registration_passenger():
             "email": email,
             "eta":eta,
             "CF":CF,
-            "prelievo":prelievo
+            "prelievo":prelievo,
+            "password":password
         }
         save_to_json(passenger, "passenger.json")
         #passengers.append(passenger)
