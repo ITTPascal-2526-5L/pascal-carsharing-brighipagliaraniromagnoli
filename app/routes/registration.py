@@ -76,7 +76,7 @@ def registration_passenger():
         
         if not (name and email and eta and CF and prelievo and password):
             flash("Tutti i campi sono obbligatori.")
-            return render_template("passsengerRegistration.html")
+            return render_template("passengerRegistration.html")
         #passenger = Passenger(name, email, eta,CF,prelievo)
         passenger = {
             "nome": name,
