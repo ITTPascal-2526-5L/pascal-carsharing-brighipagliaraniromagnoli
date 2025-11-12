@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Registrazione Driver</title>
+    <title>Driver Registration</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -36,7 +36,7 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="card shadow p-4">
-            <h3 class="text-center mb-4">Registrazione Driver</h3>
+            <h3 class="text-center mb-4">Driver Registration</h3>
 
             <form action="/registration_driver" method="POST">
               <div class="mb-3">
@@ -68,7 +68,11 @@
                 <label class="form-label">Numero Patente / Foglio Rosa</label>
                 <input type="text" class="form-control" name="Pat" placeholder="Inserisci il numero di patente o foglio rosa" required>
               </div>
-
+              
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Inserisci la password" required>
+              </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary px-4">Invia</button>
               </div>
