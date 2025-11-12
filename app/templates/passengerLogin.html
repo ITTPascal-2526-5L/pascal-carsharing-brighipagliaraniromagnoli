@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Registrazione Passeggero</title>
+    <title>Registrazione Passenger</title>
 
-    <!-- Bootstrap CSS -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,30 +13,29 @@
       crossorigin="anonymous"
     />
 
-    <!-- Il tuo file CSS -->
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
 
   <body>
-    <!-- Sezione hero -->
-    <header class="hero-section text-center text-light">
+
+    <header class="hero-section text-center">
       <div class="overlay"></div>
       <div class="content">
-        <h1 class="display-4 fw-bold">Benvenuto, Passeggero!</h1>
+        <h1 class="display-4 fw-bold">Benvenuto, Passenger!</h1>
         <h4 class="mt-3">
-          <a href="{{ url_for('main.homepage')}}" class="text-light text-decoration-underline">
+          <a href="{{ url_for('main.homepage')}}" class="text-decoration-underline">
             Torna alla Home
           </a>
         </h4>
       </div>
     </header>
 
-    <!-- Sezione principale -->
     <main class="container py-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="card shadow p-4">
-            <h3 class="text-center mb-4">Registrazione Passeggero</h3>
+            <h3 class="text-center mb-4">Registrazione Passenger</h3>
 
             <form action="/registration_passenger" method="POST">
               <div class="mb-3">

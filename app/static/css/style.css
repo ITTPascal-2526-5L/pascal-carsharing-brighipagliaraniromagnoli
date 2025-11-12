@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: black;
+  background-color: white;
   margin: 0;
   padding: 0;
 }
@@ -12,6 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .hero-section .overlay {
