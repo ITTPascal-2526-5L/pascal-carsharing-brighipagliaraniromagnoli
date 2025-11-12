@@ -25,6 +25,7 @@
         <main>
 
             <h1>Benvenuto nella registrazione delle Scuole</h1>
+            <h4><a href="{{ url_for('main.homepage')}}">Home</a></h4>
             <form action="/registration_school" method="POST">
                 <label for="text">Nome della scuola</label><br>
                 <input type="text" placeholder="Inserire il nome della scuola" name="nomeScuola" required/><br>
