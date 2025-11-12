@@ -17,26 +17,27 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="/app/static/css/style.css">
     </head>
 
-    <body>
+    <body class="background">
         <header>
             
         </header>
         <main>
             <form action="/registration_driver" method="POST">
                 <label for="text">Nome</label><br>
-                <input type="text" placeholder="Inserire il nome" name="nome" /><br>
+                <input type="text" placeholder="Inserire il nome" name="nome" required/><br>
                 <label for="text">Cognome</label><br>
-                <input type="text" placeholder="Inserire il cognome" name="cognome" /><br>
+                <input type="text" placeholder="Inserire il cognome" name="cognome" required/><br>
                 <label for="text">Email</label><br>
-                <input type="text" placeholder="email" name="email" /><br>
+                <input type="text" placeholder="email" name="email" required/><br>
                 <label for="text">Eta</label><br>
-                <input type="text" placeholder="eta" name="eta" /><br>
+                <input type="text" placeholder="eta" name="eta" required/><br>
                 <label for="text">Codice fiscale</label><br>
-                <input type="text" placeholder="CF" name="CF" /><br>
+                <input type="text" placeholder="CF" name="CF" required/><br>
                 <label for="text">Numero Patente / Foglio Rosa</label><br>
-                <input type="text" placeholder="Patente" name="Pat" /><br>
+                <input type="text" placeholder="Patente" name="Pat" required/><br>
 
                 <button type="submit">Invia</button>
             </form>

@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
 }
+<<<<<<< HEAD
 
 .hero-section {
     position: relative;
@@ -44,3 +45,8 @@ body {
     font-size: 0.9rem;
 }
 
+=======
+.background{
+  background-color: chartreuse;
+}
+>>>>>>> 04ad8884ba16d238ceab2852fe3ace14bed4fb32
