@@ -59,8 +59,8 @@ def registration_driver():
 
         #drivers.append(driver)
         save_to_json(driver, "driver.json")
-        flash("Registrazione avvenuta con successo!")
-        return redirect("/registration_driver")
+        flash("Registrazione avvenuta con successo! Effettua il login.")
+        return redirect("/login")
     return render_template("driverLogin.html")
 
 @registration_bp.route("/registration_passenger", methods=["GET", "POST"])
@@ -76,8 +76,7 @@ def registration_passenger():
         
         if not (name and email and eta and CF and prelievo and password):
             flash("Tutti i campi sono obbligatori.")
-            return render_template("passengerRegistration.html")
-        #passenger = Passenger(name, email, eta,CF,prelievo)
+            return render_template("passengerLogin.html")
         passenger = {
             "nome": name,
             "cognome": cognome,
@@ -88,9 +87,8 @@ def registration_passenger():
             "password":password
         }
         save_to_json(passenger, "passenger.json")
-        #passengers.append(passenger)
-        flash("Registrazione avvenuta con successo!")
-        return redirect("/registration_passenger")
+        flash("Registrazione avvenuta con successo! Effettua il login.")
+        return redirect("/login")
     return render_template("passengerLogin.html")
 
 @registration_bp.route("/registration_school", methods=["GET", "POST"])
@@ -110,8 +108,6 @@ def registration_school():
         }
 
         save_to_json(school, "school.json")
-
-        flash("Registrazione avvenuta con successo!")
-        return redirect("/registration_school")
-
+        flash("Registrazione avvenuta con successo! Effettua il login.")
+        return redirect("/login")
     return render_template("schoolLogin.html")

@@ -6,3 +6,7 @@ main_bp = Blueprint("main", __name__)
 
 def homepage():
     return render_template("index.html")
+
+@main_bp.route("/access")
+def access():
+    return render_template("access.html")
