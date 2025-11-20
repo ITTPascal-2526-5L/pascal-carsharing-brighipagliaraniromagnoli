@@ -4,59 +4,6 @@ import os
 
 login_bp = Blueprint("login", __name__)
 
-DATA_FOLDER = os.path.join(os.path.dirname(__file__), "..", "json")
-
-def check_credentials(email, password):
-    # Check in passenger.json
-    passenger_path = os.path.join(DATA_FOLDER, "passenger.json")
-    if os.path.exists(passenger_path):
-        with open(passenger_path, "r", encoding="utf-8") as f:
-            passengers = json.load(f)
-            for p in passengers:
-                if p.get("email") == email and p.get("password") == password:
-                    return p.get("nome", "Utente")
-    # Check in driver.json
-    driver_path = os.path.join(DATA_FOLDER, "driver.json")
-    if os.path.exists(driver_path):
-        with open(driver_path, "r", encoding="utf-8") as f:
-            drivers = json.load(f)
-            for d in drivers:
-                if d.get("email") == email and d.get("password") == password:
-                    return d.get("nome", "Utente")
-    # Check in school.json
-    school_path = os.path.join(DATA_FOLDER, "school.json")
-    if os.path.exists(school_path):
-        with open(school_path, "r", encoding="utf-8") as f:
-            schools = json.load(f)
-            for s in schools:
-                if s.get("nomeScuola") == email and s.get("suffix") == password:
-                    return s.get("nomeScuola", "Scuola")
-    return None
-
 @login_bp.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password")
-        user = check_credentials(email, password)
-        if user:
-            session["user"] = user
-            flash(f"Benvenuto, {user}!")
-            return redirect("/welcome")
-        else:
-            flash("Credenziali non valide.")
-    return render_template("login.html")
-
-@login_bp.route("/logout")
-def logout():
-    session.pop("user", None)
-    flash("Logout effettuato.")
-    return redirect("/login")
-
-@login_bp.route("/welcome")
-def welcome():
-    user = session.get("user")
-    if not user:
-        flash("Effettua il login per accedere.")
-        return redirect("/login")
-    return render_template("welcome.html", user=user)
+    return 
