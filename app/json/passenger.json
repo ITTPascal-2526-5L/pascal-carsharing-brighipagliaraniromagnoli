@@ -6,5 +6,23 @@
         "eta": "12",
         "CF": "Cascata",
         "prelievo": "Ziz"
+    },
+    {
+        "nome": "carminecoccimiglio",
+        "cognome": "daje",
+        "email": "t@gfd.jty",
+        "eta": "2",
+        "CF": "sda",
+        "prelievo": "sad",
+        "password": "fdsf"
+    },
+    {
+        "nome": "roma",
+        "cognome": "dasdas",
+        "email": "samuele.romagnoli.stud@ispascalcomandini.it",
+        "eta": "322",
+        "CF": "gtru",
+        "prelievo": "kuyk",
+        "password": "uuiuy"
     }
 ]
