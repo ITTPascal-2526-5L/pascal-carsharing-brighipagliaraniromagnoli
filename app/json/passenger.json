@@ -8,6 +8,7 @@
         "prelievo": "Ziz"
     },
     {
+<<<<<<< HEAD
         "nome": "gjj",
         "cognome": "fbg",
         "email": "ghjghjgj@gjnf.fdugh",
@@ -69,5 +70,23 @@
         "CF": "hjgfyj",
         "prelievo": "gyjugyiygti",
         "password": "password"
+=======
+        "nome": "carminecoccimiglio",
+        "cognome": "daje",
+        "email": "t@gfd.jty",
+        "eta": "2",
+        "CF": "sda",
+        "prelievo": "sad",
+        "password": "fdsf"
+    },
+    {
+        "nome": "roma",
+        "cognome": "dasdas",
+        "email": "samuele.romagnoli.stud@ispascalcomandini.it",
+        "eta": "322",
+        "CF": "gtru",
+        "prelievo": "kuyk",
+        "password": "uuiuy"
+>>>>>>> 70873c52bbc891cec575420575dfd2898bc8edb4
     }
 ]
