@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "nome": "pipipipi",
         "cognome": "fbg",
         "email": "ghjghjgj@gjnf.fdugh",
@@ -7,5 +8,14 @@
         "CF": "hjgfyj",
         "prelievo": "gyjugyiygti",
         "password": "pass"
+=======
+        "nome": "Maxwells",
+        "cognome": "Ela",
+        "email": "cactusmao67@gmail.com",
+        "eta": "12",
+        "CF": "Cascata",
+        "prelievo": "Ziz"
+>>>>>>> f6b2214565fb7273ac1379fcfd560deaeaa70715
     }
+    
 ]

@@ -35,28 +35,4 @@ def check_credentials(email, password):
 
 @login_bp.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password")
-        user = check_credentials(email, password)
-        if user:
-            session["user"] = user
-            flash(f"Benvenuto, {user}!")
-            return redirect("/welcome")
-        else:
-            flash("Credenziali non valide.")
-    return render_template("login.html")
-
-@login_bp.route("/logout")
-def logout():
-    session.pop("user", None)
-    flash("Logout effettuato.")
-    return redirect("/login")
-
-@login_bp.route("/welcome")
-def welcome():
-    user = session.get("user")
-    if not user:
-        flash("Effettua il login per accedere.")
-        return redirect("/login")
-    return render_template("welcome.html", user=user)
+    return 
