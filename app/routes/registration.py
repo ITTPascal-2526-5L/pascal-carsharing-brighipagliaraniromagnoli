@@ -60,7 +60,8 @@ def registration_driver():
         #drivers.append(driver)
         save_to_json(driver, "driver.json")
         flash("Registrazione avvenuta con successo! Effettua il login.")
-        return redirect("/login")
+        #return redirect("/login")
+        return render_template("login.html")
     return render_template("driverLogin.html")
 
 @registration_bp.route("/registration_passenger", methods=["GET", "POST"])
@@ -88,7 +89,8 @@ def registration_passenger():
         }
         save_to_json(passenger, "passenger.json")
         flash("Registrazione avvenuta con successo! Effettua il login.")
-        return redirect("/login")
+        return render_template("login.html")
+        #return redirect("/login")
     return render_template("passengerLogin.html")
 
 @registration_bp.route("/registration_school", methods=["GET", "POST"])
@@ -109,5 +111,6 @@ def registration_school():
 
         save_to_json(school, "school.json")
         flash("Registrazione avvenuta con successo! Effettua il login.")
-        return redirect("/login")
+        #return redirect("/login")
+        return render_template("login.html")
     return render_template("schoolLogin.html")
