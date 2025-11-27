@@ -1,92 +1,11 @@
 [
     {
-        "nome": "Maxwells",
-        "cognome": "Ela",
-        "email": "cactusmao67@gmail.com",
-        "eta": "12",
-        "CF": "Cascata",
-        "prelievo": "Ziz"
-    },
-    {
-<<<<<<< HEAD
-        "nome": "gjj",
+        "nome": "pipipipi",
         "cognome": "fbg",
         "email": "ghjghjgj@gjnf.fdugh",
         "eta": "4",
         "CF": "hjgfyj",
         "prelievo": "gyjugyiygti",
         "password": "pass"
-    },
-    {
-        "nome": "frgfhh",
-        "cognome": "fbg",
-        "email": "ghjghjgj@gjnf.fdugh",
-        "eta": "8",
-        "CF": "hghfjghj",
-        "prelievo": "gyjugyiygti",
-        "password": "pass"
-    },
-    {
-        "nome": "gjj",
-        "cognome": "fbg",
-        "email": "ghjghjgj@gjnf.fdugh",
-        "eta": "7",
-        "CF": "hjgfyj",
-        "prelievo": "gyjugyiygti",
-        "password": "hjj"
-    },
-    {
-        "nome": "ciao",
-        "cognome": "fbg",
-        "email": "ghjghjgj@gjnf.fdugh",
-        "eta": "5",
-        "CF": "hjgfyj",
-        "prelievo": "gyjugyiygti",
-        "password": "pass"
-    },
-    {
-        "nome": "gjj",
-        "cognome": "fbg",
-        "email": "ghjghjgj@gjnf.fdugh",
-        "eta": "8",
-        "CF": "hjgfyj",
-        "prelievo": "gyjugyiygti",
-        "password": "pass"
-    },
-    {
-        "nome": "frgfhh",
-        "cognome": "fbg",
-        "email": "ghjghjgj@gjnf.fdugh",
-        "eta": "1",
-        "CF": "hjgfyj",
-        "prelievo": "gyjugyiygti",
-        "password": "pass"
-    },
-    {
-        "nome": "gjj",
-        "cognome": "fbg",
-        "email": "ghjghjgj@gjnf.fdugh",
-        "eta": "4",
-        "CF": "hjgfyj",
-        "prelievo": "gyjugyiygti",
-        "password": "password"
-=======
-        "nome": "carminecoccimiglio",
-        "cognome": "daje",
-        "email": "t@gfd.jty",
-        "eta": "2",
-        "CF": "sda",
-        "prelievo": "sad",
-        "password": "fdsf"
-    },
-    {
-        "nome": "roma",
-        "cognome": "dasdas",
-        "email": "samuele.romagnoli.stud@ispascalcomandini.it",
-        "eta": "322",
-        "CF": "gtru",
-        "prelievo": "kuyk",
-        "password": "uuiuy"
->>>>>>> 70873c52bbc891cec575420575dfd2898bc8edb4
     }
 ]
