@@ -16,7 +16,7 @@ body {
   color: #fff;
 }
 
-.hero-section .overlay {
+.hero-section .overlay, .head {
   position: absolute;
   top: 0;
   left: 0;
@@ -102,3 +102,4 @@ body {
     padding: 2rem 1rem;
   }
 }
+
