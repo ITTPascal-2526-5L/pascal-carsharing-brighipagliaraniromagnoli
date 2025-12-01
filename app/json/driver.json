@@ -5,7 +5,8 @@
         "email": "cactusmao12@gmail.com",
         "eta": "21",
         "CF": "Staccionata",
-        "NrPatente": "23456"
+        "NrPatente": "23456",
+        "password": "23"
     },
     {
         "nome": "AuraSquad",
@@ -15,14 +16,5 @@
         "CF": "yrthu",
         "NrPatente": "432",
         "password": "jhmjkuòo8lii7o .8o"
-    },
-    {
-        "nome": "dmk",
-        "cognome": "èfo",
-        "email": "sadfdaf@xn--padf-4oa",
-        "eta": "34",
-        "CF": "32",
-        "NrPatente": "23",
-        "password": "234"
     }
 ]

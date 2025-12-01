@@ -7,5 +7,14 @@
         "CF": "32",
         "prelievo": "3",
         "password": "r"
+    },
+    {
+        "nome": "Maxwells",
+        "cognome": "Mayor",
+        "email": "m@ax.it",
+        "eta": "11",
+        "CF": "mrmx4563",
+        "prelievo": "Roma",
+        "password": "11e"
     }
 ]

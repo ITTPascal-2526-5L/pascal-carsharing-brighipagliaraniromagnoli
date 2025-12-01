@@ -33,11 +33,42 @@ def check_credentials(email, password):
                     return s.get("nomeScuola", "Scuola")
     return None
 
+# @login_bp.route("/login", methods=["GET", "POST"])
+# def login():
+#     if request.method == "POST":
+#         nameLogin=request.form.get("email")
+#         password=request.form.get("password")
+#         if(check_credentials(nameLogin,password)):
+#             return render_template("menu.html")
+#         else:
+#             return render_template("login.html")
+#     else:
+#         return render_template("login.html")
+    
 @login_bp.route("/login", methods=["GET", "POST"])
 def login():
-     return render_template("login.html")
-     #if(request.method=="POST"):
-          
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        user = check_credentials(email, password)
+
+        if user:
+            session["username"] = user
+            return redirect("/menu")
+
+        flash("Credenziali errate")
+        return redirect("/login")
+
+    return render_template("login.html")
+    
+
+@login_bp.route("/menu")
+def menu():
+    username = session.get("username")
+    if not username:
+        return redirect("/login")
+    return render_template("menu.html", user=username)
           
         
      
