@@ -23,6 +23,9 @@
 
     <header class="hero-section text-light d-flex flex-column position-relative">
         <a href="{{url_for('login.login')}}" class="btn btn-success btn-lg m-2 position-absolute end-0 top-0 me-4 mt-4" style="z-index:10;">LOGIN</a>
+        <a href="{{ url_for('registration.view') }}" class="btn btn-info btn-lg m-2 position-absolute start-0 top-0 ms-4 mt-4 text-reset text-decoration-none" style="z-index:10;">Guarda Iscritti</a>
+
+        
         <div class="overlay"></div>
         <div class="content d-flex flex-column align-items-center justify-content-center flex-grow-1">
             <h1 class="display-4 fw-bold">Benvenuto su Pascal CarSharing</h1>

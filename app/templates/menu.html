@@ -20,8 +20,21 @@
 
     <body>
 
-        <main>
+        <main class="d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 70vh;">
             <h1><h1>Benvenuto {{ user}}</h1></h1>
+            
+            <br>
+            <br>
+            {% if user_type == 'driver' %}
+                <h4>Carica Patente (PDF, JPG, PNG)</h4>
+                <form method="POST" action="{{ url_for('login.upload_file') }}" enctype="multipart/form-data">
+                    <input type="file" name="file" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <button type="submit" class="btn btn-primary">Carica</button>
+                </form>
+            {% endif %}
+
+
+
         </main>
 
         <script
