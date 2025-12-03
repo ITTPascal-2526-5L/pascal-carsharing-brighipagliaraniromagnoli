@@ -136,6 +136,11 @@ def upload_file():
         flash("Tipo di file non consentito!")
         return redirect("/menu")
    
+
+@login_bp.route("/logout")
+def logout():
+    session.pop("username", None)
+    return redirect("/login")
           
         
      

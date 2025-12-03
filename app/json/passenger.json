@@ -16,5 +16,14 @@
         "CF": "mrmx4563",
         "prelievo": "Roma",
         "password": "11e"
+    },
+    {
+        "nome": "Lucs",
+        "cognome": "Pulgs",
+        "email": "lucapulga@luca.com",
+        "eta": "78",
+        "CF": "32",
+        "prelievo": "Via Roma 1, Roma",
+        "password": "password"
     }
 ]

@@ -5,6 +5,8 @@ main_bp = Blueprint("main", __name__)
 @main_bp.route("/")
 
 def homepage():
+    # TODO: Add login session logic here 
+
     return render_template("index.html")
 
 @main_bp.route("/access")

@@ -16,5 +16,14 @@
         "CF": "yrthu",
         "NrPatente": "432",
         "password": "jhmjkuòo8lii7o .8o"
+    },
+    {
+        "nome": "Luca",
+        "cognome": "Pulga",
+        "email": "lucapulga@luca.com",
+        "eta": "78",
+        "CF": "32",
+        "NrPatente": "123548",
+        "password": "password"
     }
 ]

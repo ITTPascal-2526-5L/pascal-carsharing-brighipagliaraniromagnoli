@@ -18,5 +18,10 @@
         "nomeScuola": "prova",
         "indirizzo": "via prova p",
         "suffix": "provaSuff"
+    },
+    {
+        "nomeScuola": "Via Della Piazza 234",
+        "indirizzo": "Via Della Piazza 234",
+        "suffix": "scuola@madonna.it"
     }
 ]
