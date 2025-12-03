@@ -1,0 +1,105 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section {
+  position: relative;
+  height: 60vh;
+  background: url('https://images.unsplash.com/photo-1519585309395-1d5e88c7d8a4?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0 40px 0;
+  color: #fff;
+}
+
+.hero-section .overlay, .head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.7);
+}
+
+.hero-section .content {
+  position: relative;
+  z-index: 2;
+}
+
+.btn {
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  background-color: #212529;
+  font-size: 0.9rem;
+}
+
+.card {
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.12);
+  border: none;
+}
+
+.card h3 {
+  color: #218838;
+  font-weight: 700;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #218838;
+}
+
+.btn-success {
+  background-color: #218838;
+  border: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-success:hover {
+  background-color: #18632a;
+}
+
+.footer {
+  background: #218838;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.hero-section a {
+  color: #fff !important;
+  background: #218838;
+  padding: 6px 18px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.hero-section a:hover {
+  background: #18632a;
+  color: #e0ffe7 !important;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 30px 0 20px 0;
+  }
+  .card {
+    padding: 2rem 1rem;
+  }
+}
+
