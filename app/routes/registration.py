@@ -114,3 +114,30 @@ def registration_school():
         #return redirect("/login")
         return render_template("login.html")
     return render_template("schoolLogin.html")
+
+@registration_bp.route("/view")
+def view():
+    passenger_path = os.path.join(DATA_FOLDER, "passenger.json")
+    driver_path = os.path.join(DATA_FOLDER, "driver.json")
+    school_path = os.path.join(DATA_FOLDER, "school.json")
+
+    passengers = []
+    drivers = []
+    schools = []
+
+    if os.path.exists(passenger_path):
+        with open(passenger_path, "r", encoding="utf-8") as f:
+            passengers = json.load(f)
+
+    if os.path.exists(driver_path):
+        with open(driver_path, "r", encoding="utf-8") as f:
+            drivers = json.load(f)
+
+    if os.path.exists(school_path):
+        with open(school_path, "r", encoding="utf-8") as f:
+            schools = json.load(f)
+
+    return render_template("view.html",passengers=passengers,drivers=drivers,schools=schools)
+ 
+
+ 

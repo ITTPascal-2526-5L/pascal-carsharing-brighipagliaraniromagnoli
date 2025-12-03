@@ -9,13 +9,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <a href="{{ url_for('main.homepage')}}" >Torna alla Home</a>
   </head>
   <body>
+    <a href="{{ url_for('main.homepage')}}" >Torna alla Home</a>
     <main class="container py-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="card shadow p-4">
             <h3 class="text-center mb-4">Login</h3>
+            
             {% with messages = get_flashed_messages() %}
               {% if messages %}
                 {% for message in messages %}
@@ -25,31 +28,22 @@
                 {% endfor %}
               {% endif %}
             {% endwith %}
-            <form method="POST">
+            
+            <form action="/login" method="POST">
               <div class="mb-3">
                 <label class="form-label">Email / Nome Scuola</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="email"
-                  placeholder="Email o Nome Scuola"
-                  required
-                />
+                <input type="text" class="form-control" name="email" placeholder="Email o Nome Scuola" required/>
               </div>
               <div class="mb-3">
                 <label class="form-label">Password / Suffisso</label>
                 <input
-                  type="password"
-                  class="form-control"
-                  name="password"
-                  placeholder="Password o Suffisso"
-                  required
-                />
+                  type="password" class="form-control" name="password" placeholder="Password o Suffisso" required/>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-success px-4">Login</button>
               </div>
             </form>
+            
           </div>
         </div>
       </div>

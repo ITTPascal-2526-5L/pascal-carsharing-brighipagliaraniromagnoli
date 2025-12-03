@@ -13,5 +13,10 @@
         "nomeScuola": "Scuola di Ziz",
         "indirizzo": "Valle del Cavallo 128",
         "suffix": "@fhusdi,com"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "via prova p",
+        "suffix": "provaSuff"
     }
 ]

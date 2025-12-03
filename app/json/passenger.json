@@ -1,32 +1,20 @@
 [
     {
-<<<<<<< HEAD
-        "nome": "pipipipi",
-        "cognome": "fbg",
-        "email": "ghjghjgj@gjnf.fdugh",
-        "eta": "4",
-        "CF": "hjgfyj",
-        "prelievo": "gyjugyiygti",
-        "password": "pass"
-=======
-        "nome": "Maxwells",
-        "cognome": "Ela",
-        "email": "cactusmao67@gmail.com",
-        "eta": "12",
-        "CF": "Cascata",
-        "prelievo": "Ziz"
-<<<<<<< HEAD
-    },
-    {
         "nome": "dmk",
         "cognome": "èfo",
         "email": "sadfdaf@xn--padf-4oa",
-        "eta": "2",
+        "eta": "35",
         "CF": "32",
         "prelievo": "3",
-        "password": "324"
-=======
->>>>>>> f6b2214565fb7273ac1379fcfd560deaeaa70715
->>>>>>> 4964f7f6e0502451efb5ae6a4c2d3d55a6dd57bd
+        "password": "r"
+    },
+    {
+        "nome": "Maxwells",
+        "cognome": "Mayor",
+        "email": "m@ax.it",
+        "eta": "11",
+        "CF": "mrmx4563",
+        "prelievo": "Roma",
+        "password": "11e"
     }
 ]
