@@ -72,7 +72,7 @@ def menu():
         return redirect("/login")
 
     # Controlla se è driver
-    user_type = "passenger"  # default
+    user_type = "passenger" 
     driver_path = os.path.join(DATA_FOLDER, "driver.json")
     if os.path.exists(driver_path):
         with open(driver_path, "r", encoding="utf-8") as f:

@@ -22,6 +22,16 @@
 
         <main class="d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 70vh;">
             <h1><h1>Benvenuto {{ user}}</h1></h1>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-info text-center" role="alert">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
             
             <br>
             <br>
