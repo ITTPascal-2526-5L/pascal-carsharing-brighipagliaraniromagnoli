@@ -16,5 +16,14 @@
         "CF": "mrmx4563",
         "prelievo": "Roma",
         "password": "11e"
+    },
+    {
+        "nome": "Luca",
+        "cognome": "Pulga",
+        "email": "luca.pulga@ispascalcomandini.it",
+        "eta": "22",
+        "CF": "PLGLCU03G30C573X",
+        "prelievo": "Cesena",
+        "password": "1234"
     }
 ]
