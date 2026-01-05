@@ -23,5 +23,10 @@
         "nomeScuola": "Via Della Piazza 234",
         "indirizzo": "Via Della Piazza 234",
         "suffix": "scuola@madonna.it"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "1",
+        "suffix": "12"
     }
 ]

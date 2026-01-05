@@ -25,5 +25,14 @@
         "CF": "32",
         "NrPatente": "123548",
         "password": "password"
+    },
+    {
+        "nome": "Maxwells",
+        "cognome": "El",
+        "email": "cactusmao12@gmail.com",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "23456",
+        "password": "rebublica"
     }
 ]
