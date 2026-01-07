@@ -28,5 +28,15 @@
         "nomeScuola": "prova",
         "indirizzo": "1",
         "suffix": "12"
+    },
+    {
+        "nomeScuola": "Prova",
+        "indirizzo": "12",
+        "suffix": "q"
+    },
+    {
+        "nomeScuola": "Prova",
+        "indirizzo": "2",
+        "suffix": "22"
     }
 ]
