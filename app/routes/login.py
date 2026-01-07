@@ -71,7 +71,7 @@ def menu():
     if not username:
         return redirect("/login")
 
-    # Controlla se è driver
+    # Se è driver
     user_type = "passenger" 
     driver_path = os.path.join(DATA_FOLDER, "driver.json")
     if os.path.exists(driver_path):
@@ -81,12 +81,33 @@ def menu():
                 if d.get("nome") == username:
                     user_type = "driver"
                     break
+    # Controlla se è passenger
+    user_type = "passenger" 
+    passenger_path = os.path.join(DATA_FOLDER, "passenger.json")
+    if os.path.exists(passenger_path):
+        with open(passenger_path, "r", encoding="utf-8") as f:
+            passengers = json.load(f)
+            for p in passengers:
+                if p.get("nome") == username:
+                    user_type = "passenger"
+                    break
+
+        # Controlla se è school
+    user_type = "" 
+    school_path = os.path.join(DATA_FOLDER, "school.json")
+    if os.path.exists(school_path):
+        with open(school_path, "r", encoding="utf-8") as f:
+            schools = json.load(f)
+            for s in schools:
+                if s.get("nomeScuola") == username:
+                    user_type = "school"
+                    break
 
     return render_template("menu.html", user=username, user_type=user_type)
 
 
 ALLOWED_EXTENSIONS = {"pdf", "jpg", "jpeg", "png"}
-UPLOAD_FOLDER = os.path.join(DATA_FOLDER, "app/static/img")  # cartella dove salvare i file
+UPLOAD_FOLDER = os.path.join(DATA_FOLDER, "app/static/img")  # cartella dove salva i file
 
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)

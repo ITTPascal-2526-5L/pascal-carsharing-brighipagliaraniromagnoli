@@ -42,10 +42,19 @@
                 <form method="POST" action="{{ url_for('login.upload_file') }}" enctype="multipart/form-data">
                     <input type="file" name="file" accept=".pdf,.jpg,.jpeg,.png" required>
                     <button type="submit" class="btn btn-primary">Carica</button>
+
                 </form>
+
+                <button class="btn btn-danger">Inizia Viaggio</button>
             {% endif %}
+            {% if user_type == 'passenger' %}
 
+                <button class="btn btn-success">Consulta Viaggio</button>
+            {% endif %}
+            {% if user_type == 'school' %}
 
+                <button class="btn btn-primnary">Cambio indirizzo</button>
+            {% endif %}
 
         </main>
 

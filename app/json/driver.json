@@ -34,5 +34,14 @@
         "CF": "mrmx4563",
         "NrPatente": "23456",
         "password": "rebublica"
+    },
+    {
+        "nome": "Giacomo",
+        "cognome": "Leopardi",
+        "email": "s@a",
+        "eta": "34",
+        "CF": "LPdGcm",
+        "NrPatente": "56au12",
+        "password": "password"
     }
 ]

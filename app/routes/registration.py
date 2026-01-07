@@ -136,10 +136,9 @@ def registration_school():
 # ---------------------- VIEW ----------------------
 @registration_bp.route("/view")
 def view():
-    # Legge tutti i record dal database
+    # Legge i record dal database
     passengers = Passenger.query.all()
     drivers = Driver.query.all()
     schools = School.query.all()
-
-    # Passa i dati al template
+    
     return render_template("view.html", passengers=passengers, drivers=drivers, schools=schools)
