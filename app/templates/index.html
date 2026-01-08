@@ -33,13 +33,17 @@
         </div>
     </header>
 
-    <main class="text-center py-5">
+    <main class="text-center py-3">
         <div class="container">
- 
-            <h2 class="mb-4">Scegli il tuo ruolo per iniziare</h2>
-            <a href="{{ url_for('registration.registration_passenger') }}" class="btn btn-success btn-lg m-2">Passenger</a>
-            <a href="{{ url_for('registration.registration_driver') }}" class="btn btn-danger btn-lg m-2">Driver</a>
-            <a href="{{ url_for('registration.registration_school') }}" class="btn btn-primary btn-lg m-2">School</a>
+            <div class="mb-3">
+                <div class="alert alert-warning p-2 rounded-3 shadow-sm fw-bold" style="background:linear-gradient(90deg,#fffbe7,#ffe082);color:#7c5c00;">
+                    <i class="bi bi-megaphone-fill me-2"></i> Offerta speciale: scarica l'app Pascal CarSharing e ottieni un viaggio gratis! <a href="https://cinquantalibri.com/wp-content/uploads/2016/03/indian-writers.jpg" class="fw-bold text-decoration-underline">Scopri di più</a>
+                </div>
+            </div>
+            <h2 class="mb-3">Scegli il tuo ruolo per iniziare</h2>
+            <a href="{{ url_for('registration.registration_passenger') }}" class="btn btn-success btn-lg m-1">Passenger</a>
+            <a href="{{ url_for('registration.registration_driver') }}" class="btn btn-danger btn-lg m-1">Driver</a>
+            <a href="{{ url_for('registration.registration_school') }}" class="btn btn-primary btn-lg m-1">School</a>
         </div>
     </main>
 
