@@ -2,6 +2,10 @@ from flask import Blueprint, render_template, redirect, request, flash, session
 import json
 import os
 from werkzeug.utils import secure_filename
+from app.models.driver import Driver
+from app.models.passenger import Passenger
+from app.models.school import School
+from app import db
 
 
 login_bp = Blueprint("login", __name__)
@@ -9,30 +13,20 @@ login_bp = Blueprint("login", __name__)
 DATA_FOLDER = os.path.join(os.path.dirname(__file__), "..", "json")
 
 def check_credentials(email, password):
+    # Controlla Passenger
+    passenger = Passenger.query.filter_by(email=email, password=password).first()
+    if passenger:
+        return passenger.nome
 
-    passenger_path = os.path.join(DATA_FOLDER, "passenger.json")
-    if os.path.exists(passenger_path):
-        with open(passenger_path, "r", encoding="utf-8") as f:
-            passengers = json.load(f)
-            for p in passengers:
-                if p.get("email") == email and p.get("password") == password:
-                    return p.get("nome", "Utente")
+    # Controlla Driver
+    driver = Driver.query.filter_by(email=email, password=password).first()
+    if driver:
+        return driver.nome
 
-    driver_path = os.path.join(DATA_FOLDER, "driver.json")
-    if os.path.exists(driver_path):
-        with open(driver_path, "r", encoding="utf-8") as f:
-            drivers = json.load(f)
-            for d in drivers:
-                if d.get("email") == email and d.get("password") == password:
-                    return d.get("nome", "Utente")
-
-    school_path = os.path.join(DATA_FOLDER, "school.json")
-    if os.path.exists(school_path):
-        with open(school_path, "r", encoding="utf-8") as f:
-            schools = json.load(f)
-            for s in schools:
-                if s.get("nomeScuola") == email and s.get("suffix") == password:
-                    return s.get("nomeScuola", "Scuola")
+    # Controlla School (login con nomeScuola e suffix come password)
+    school = School.query.filter_by(nomeScuola=email, suffix=password).first()
+    if school:
+        return school.nomeScuola
     return None
 
 # @login_bp.route("/login", methods=["GET", "POST"])
@@ -162,6 +156,5 @@ def upload_file():
 def logout():
     session.pop("username", None)
     return redirect("/login")
-          
-        
-     
+
+

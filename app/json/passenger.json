@@ -34,5 +34,14 @@
         "CF": "15",
         "prelievo": "123468",
         "password": "12"
+    },
+    {
+        "nome": "Marco",
+        "cognome": "Snabl",
+        "email": "cactusmao12@gmail.com",
+        "eta": "16",
+        "CF": "snbmrc10e16c573h",
+        "prelievo": "via calcinaro 2121",
+        "password": "23"
     }
 ]
