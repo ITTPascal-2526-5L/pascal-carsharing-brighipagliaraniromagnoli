@@ -16,18 +16,18 @@ def check_credentials(email, password):
     # Controlla Passenger
     passenger = Passenger.query.filter_by(email=email, password=password).first()
     if passenger:
-        return passenger.nome
+        return passenger.nome, "passenger"
 
     # Controlla Driver
     driver = Driver.query.filter_by(email=email, password=password).first()
     if driver:
-        return driver.nome
+        return driver.nome, "driver"
 
     # Controlla School (login con nomeScuola e suffix come password)
     school = School.query.filter_by(nomeScuola=email, suffix=password).first()
     if school:
-        return school.nomeScuola
-    return None
+        return school.nomeScuola, "school"
+    return None, None
 
 # @login_bp.route("/login", methods=["GET", "POST"])
 # def login():
@@ -47,10 +47,11 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
 
-        user = check_credentials(email, password)
+        user, user_type = check_credentials(email, password)
 
         if user:
             session["username"] = user
+            session["user_type"] = user_type
             return redirect("/menu")
 
         flash("Credenziali errate")
@@ -62,41 +63,9 @@ def login():
 @login_bp.route("/menu")
 def menu():
     username = session.get("username")
-    if not username:
+    user_type = session.get("user_type")
+    if not username or not user_type:
         return redirect("/login")
-
-    # Se è driver
-    user_type = "passenger" 
-    driver_path = os.path.join(DATA_FOLDER, "driver.json")
-    if os.path.exists(driver_path):
-        with open(driver_path, "r", encoding="utf-8") as f:
-            drivers = json.load(f)
-            for d in drivers:
-                if d.get("nome") == username:
-                    user_type = "driver"
-                    break
-    # Controlla se è passenger
-    user_type = "passenger" 
-    passenger_path = os.path.join(DATA_FOLDER, "passenger.json")
-    if os.path.exists(passenger_path):
-        with open(passenger_path, "r", encoding="utf-8") as f:
-            passengers = json.load(f)
-            for p in passengers:
-                if p.get("nome") == username:
-                    user_type = "passenger"
-                    break
-
-        # Controlla se è school
-    user_type = "" 
-    school_path = os.path.join(DATA_FOLDER, "school.json")
-    if os.path.exists(school_path):
-        with open(school_path, "r", encoding="utf-8") as f:
-            schools = json.load(f)
-            for s in schools:
-                if s.get("nomeScuola") == username:
-                    user_type = "school"
-                    break
-
     return render_template("menu.html", user=username, user_type=user_type)
 
 

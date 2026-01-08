@@ -30,16 +30,16 @@
   <div class="row justify-content-center">
     <div class="col-lg-8">
       <div class="alert alert-warning p-2 rounded-3 shadow-sm fw-bold mb-3 text-center" style="background:linear-gradient(90deg,#fffbe7,#ffe082);color:#7c5c00;">
-        <i class="bi bi-megaphone-fill me-2"></i> Scarica l'app Pascal CarSharing e ottieni un viaggio gratis! <a href="https://cinquantalibri.com/wp-content/uploads/2016/03/indian-writers.jpg" class="fw-bold text-decoration-underline">Scopri</a>
+        <i class="bi bi-megaphone-fill me-2"></i> Scarica l'app Pascal CarSharing e ottieni un viaggio gratis! <a href="https://www.ispascalcomandini.it/itt-b-pascal/" class="fw-bold text-decoration-underline">Scopri</a>
       </div>
       <div class="dashboard-card text-center mb-2">
         {% if user_type == 'driver' %}
-          <div class="dashboard-icon text-danger"><i class="bi bi-steering-wheel"></i></div>
+          <div class="dashboard-icon text-danger"><i class="bi bi-car-front-fill"></i></div>
           <span class="badge bg-danger mb-2">Driver</span>
         {% elif user_type == 'passenger' %}
           <div class="dashboard-icon text-success"><i class="bi bi-person-fill"></i></div>
           <span class="badge bg-success mb-2">Passeggero</span>
-        {% else %}
+        {% elif user_type == 'school' %}
           <div class="dashboard-icon text-info"><i class="bi bi-building"></i></div>
           <span class="badge bg-info mb-2">Scuola</span>
         {% endif %}
