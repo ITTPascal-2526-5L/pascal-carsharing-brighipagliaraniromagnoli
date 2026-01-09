@@ -88,6 +88,13 @@ body {
   background-color: #18632a;
 }
 
+.footer {
+  background: #218838;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
 .hero-section a {
   color: #fff !important;
   background: #218838;
