@@ -12,8 +12,9 @@ class Passenger(db.Model):
     CF = db.Column(db.String(50), unique=True, nullable=False)
     prelievo = db.Column(db.String(200), nullable=True)
     password = db.Column(db.String(100), nullable=False)
+    punti = db.Column(db.Integer, default=0)
 
-    def __init__(self, nome, cognome, email, eta, CF, prelievo, password):
+    def __init__(self, nome, cognome, email, eta, CF, prelievo, password, punti=0):
         self.nome = nome
         self.cognome = cognome
         self.email = email
@@ -21,3 +22,4 @@ class Passenger(db.Model):
         self.CF = CF
         self.prelievo = prelievo
         self.password = password
+        self.punti = punti

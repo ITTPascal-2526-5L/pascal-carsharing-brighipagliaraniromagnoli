@@ -59,7 +59,7 @@
             <a href="#" class="btn btn-outline-dark w-100"><i class="bi bi-person-gear"></i><br>Profilo</a>
           </div>
           <div class="col-4 col-md-3 quick-action">
-            <a href="#" class="btn btn-outline-dark w-100"><i class="bi bi-question-circle"></i><br>Supporto</a>
+            <a href="/negozio" class="btn btn-outline-dark w-100"><i class="bi bi-cart-check"></i><br>Negozio</a>
           </div>
         </div>
         <div class="row justify-content-center mt-2 mb-1 g-2">
@@ -68,13 +68,28 @@
             <div class="stat-label">Viaggi</div>
           </div>
           <div class="col-4 stat-card">
-            <div class="stat-value">12</div>
+            <div class="stat-value">{{ punti }}</div>
             <div class="stat-label">Punti</div>
           </div>
           <div class="col-4 stat-card">
-            <div class="stat-value">1</div>
-            <div class="stat-label">Notifiche</div>
+            <div class="stat-value">12</div>
+            <div class="stat-label">Premi disponibili</div>
           </div>
+        </div>
+        <div class="text-center mb-3">
+          <button class="btn btn-outline-info" type="button" onclick="document.getElementById('istruzioni-punti').classList.toggle('d-none')">
+            <i class="bi bi-info-circle"></i> Come guadagnare punti?
+          </button>
+        </div>
+        <div id="istruzioni-punti" class="alert alert-info d-none text-start" style="max-width:600px;margin:auto;">
+          <strong>Come guadagnare punti CarSharing:</strong>
+          <ul class="mb-1">
+            <li>1 punto per ogni viaggio effettuato come passeggero</li>
+            <li>2 punti per ogni viaggio effettuato come driver</li>
+            <li>Bonus settimanali per chi partecipa attivamente</li>
+            <li>Eventi speciali e promozioni</li>
+          </ul>
+          <span class="small">I punti possono essere spesi nel Negozio premi!</span>
         </div>
       </div>
     </div>

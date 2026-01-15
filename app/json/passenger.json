@@ -43,5 +43,23 @@
         "CF": "snbmrc10e16c573h",
         "prelievo": "via calcinaro 2121",
         "password": "23"
+    },
+    {
+        "nome": "prova",
+        "cognome": "admin",
+        "email": "c@ad",
+        "eta": "1900",
+        "CF": "snbmrc10e16c573h",
+        "prelievo": "3123",
+        "password": "po"
+    },
+    {
+        "nome": "prova",
+        "cognome": "Snabl",
+        "email": "s@a",
+        "eta": "1900",
+        "CF": "statutoAlbertino",
+        "prelievo": "3123883450",
+        "password": "pollo"
     }
 ]

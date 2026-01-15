@@ -38,5 +38,10 @@
         "nomeScuola": "Prova",
         "indirizzo": "2",
         "suffix": "22"
+    },
+    {
+        "nomeScuola": "Cactus",
+        "indirizzo": "Via desertica, 102",
+        "suffix": "c22"
     }
 ]

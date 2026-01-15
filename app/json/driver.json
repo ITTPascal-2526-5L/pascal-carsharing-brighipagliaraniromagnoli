@@ -43,5 +43,14 @@
         "CF": "LPdGcm",
         "NrPatente": "56au12",
         "password": "password"
+    },
+    {
+        "nome": "Virgilio",
+        "cognome": "Latino",
+        "email": "lupo@romano",
+        "eta": "56",
+        "CF": "statutoAlbertino",
+        "NrPatente": "47482094a",
+        "password": "senatore"
     }
 ]

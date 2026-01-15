@@ -6,6 +6,9 @@ from app.models.driver import Driver
 from app.models.passenger import Passenger
 from app.models.school import School
 from app import db
+import random
+import string
+from flask import jsonify
 
 
 login_bp = Blueprint("login", __name__)
@@ -64,9 +67,18 @@ def login():
 def menu():
     username = session.get("username")
     user_type = session.get("user_type")
+    punti = 0
     if not username or not user_type:
         return redirect("/login")
-    return render_template("menu.html", user=username, user_type=user_type)
+    if user_type == "passenger":
+        user = Passenger.query.filter_by(nome=username).first()
+        if user:
+            punti = user.punti
+    elif user_type == "driver":
+        user = Driver.query.filter_by(nome=username).first()
+        if user:
+            punti = user.punti
+    return render_template("menu.html", user=username, user_type=user_type, punti=punti)
 
 
 ALLOWED_EXTENSIONS = {"pdf", "jpg", "jpeg", "png"}
@@ -125,5 +137,42 @@ def upload_file():
 def logout():
     session.pop("username", None)
     return redirect("/login")
+
+@login_bp.route("/negozio")
+def negozio():
+    username = session.get("username")
+    user_type = session.get("user_type")
+    if not username or not user_type:
+        return redirect("/login")
+    return render_template("negozio.html", user=username, user_type=user_type)
+
+@login_bp.route("/acquista_premio", methods=["POST"])
+def acquista_premio():
+    if "username" not in session or "user_type" not in session:
+        return jsonify({"success": False, "message": "Devi essere loggato."}), 401
+    if session["user_type"] != "passenger":
+        return jsonify({"success": False, "message": "Solo i passeggeri possono acquistare premi."}), 403
+    from app.models.passenger import Passenger
+    user = Passenger.query.filter_by(nome=session["username"]).first()
+    if not user:
+        return jsonify({"success": False, "message": "Utente non trovato."}), 404
+    premio = request.json.get("premio")
+    costi = {
+        "colazione": 20,
+        "bus": 35,
+        "carburante": 50,
+        "checkup": 60,
+        "ombrello": 40,
+        "gadget": 25
+    }
+    if premio not in costi:
+        return jsonify({"success": False, "message": "Premio non valido."}), 400
+    costo = costi[premio]
+    if user.punti < costo:
+        return jsonify({"success": False, "message": "Punti insufficienti."}), 400
+    user.punti -= costo
+    codice = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+    db.session.commit()
+    return jsonify({"success": True, "codice": codice, "message": "Premio acquistato con successo!"})
 
 

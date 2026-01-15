@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Negozio CarSharing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+      .shop-card { border-radius: 1.2rem; box-shadow: 0 4px 18px rgba(44,62,80,0.10); background: #fff; padding: 1.5rem 1.2rem; margin-bottom: 1.2rem; }
+      .shop-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+      .shop-btn { min-width: 120px; }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-2">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/menu">CarSharing</a>
+    <div class="ms-auto">
+      <a class="nav-link" href="/menu">Menu</a>
+      <a class="nav-link" href="{{ url_for('login.logout') }}">Logout</a>
+    </div>
+  </div>
+</nav>
+<main class="container py-2">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="shop-card text-center mb-2">
+        <h2 class="mb-3">Negozio premi</h2>
+        <p class="mb-4">Usa i tuoi punti per riscattare premi esclusivi dedicati agli utenti CarSharing!</p>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <div class="shop-icon text-success mb-2"><i class="bi bi-cup-hot"></i></div>
+                <h5 class="card-title">Buono Colazione Bar Pascal</h5>
+                <p class="card-text">Goditi una colazione gratis al bar della scuola.</p>
+                <div class="mb-2"><span class="badge bg-success">20 punti</span></div>
+                <button class="btn btn-outline-success shop-btn" onclick="acquistaPremio('colazione', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <div class="shop-icon text-primary mb-2"><i class="bi bi-bus-front"></i></div>
+                <h5 class="card-title">Biglietto Autobus</h5>
+                <p class="card-text">Un biglietto per il trasporto pubblico locale.</p>
+                <div class="mb-2"><span class="badge bg-primary">35 punti</span></div>
+                <button class="btn btn-outline-primary shop-btn" onclick="acquistaPremio('bus', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <div class="shop-icon text-warning mb-2"><i class="bi bi-fuel-pump"></i></div>
+                <h5 class="card-title">Buono Carburante</h5>
+                <p class="card-text">Ricevi un buono sconto per il rifornimento.</p>
+                <div class="mb-2"><span class="badge bg-warning text-dark">50 punti</span></div>
+                <button class="btn btn-outline-warning shop-btn" onclick="acquistaPremio('carburante', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 mt-3">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <div class="shop-icon text-danger mb-2"><i class="bi bi-steering-wheel"></i></div>
+                <h5 class="card-title">Check-up Auto Gratuito</h5>
+                <p class="card-text">Controllo gratuito presso officina convenzionata.</p>
+                <div class="mb-2"><span class="badge bg-danger">60 punti</span></div>
+                <button class="btn btn-outline-danger shop-btn" onclick="acquistaPremio('checkup', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <div class="shop-icon text-info mb-2"><i class="bi bi-umbrella"></i></div>
+                <h5 class="card-title">Ombrello Pascal CarSharing</h5>
+                <p class="card-text">L'ombrello ufficiale per i tuoi viaggi in ogni stagione.</p>
+                <div class="mb-2"><span class="badge bg-info text-dark">40 punti</span></div>
+                <button class="btn btn-outline-info shop-btn" onclick="acquistaPremio('ombrello', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <div class="shop-icon text-secondary mb-2"><i class="bi bi-gift"></i></div>
+                <h5 class="card-title">Gadget Pascal CarSharing</h5>
+                <p class="card-text">Scegli tra portachiavi, borraccia o t-shirt brandizzata.</p>
+                <div class="mb-2"><span class="badge bg-secondary">25 punti</span></div>
+                <button class="btn btn-outline-secondary shop-btn" onclick="acquistaPremio('gadget', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <a href="/menu" class="btn btn-outline-dark"><i class="bi bi-arrow-left"></i> Torna al Menu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer text-center text-dark py-3 bg-white mt-3">
+  <p class="mb-0">© 2026 CarSharing - Negozio Premi</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function acquistaPremio(premio, btn) {
+  btn.disabled = true;
+  fetch('/acquista_premio', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ premio })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if(data.success) {
+      alert('Premio acquistato! Codice riscatto: ' + data.codice);
+    } else {
+      alert(data.message);
+    }
+    btn.disabled = false;
+  })
+  .catch(() => { alert('Errore di rete.'); btn.disabled = false; });
+}
+</script>
+</body>
+</html>
