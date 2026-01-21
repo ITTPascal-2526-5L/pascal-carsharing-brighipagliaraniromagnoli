@@ -61,5 +61,14 @@
         "CF": "statutoAlbertino",
         "prelievo": "3123883450",
         "password": "pollo"
+    },
+    {
+        "nome": "marco",
+        "cognome": "brighi",
+        "email": "cactusmao12@gmail.com",
+        "eta": "18",
+        "CF": "MRMARCO",
+        "prelievo": "kuyk",
+        "password": "23"
     }
 ]

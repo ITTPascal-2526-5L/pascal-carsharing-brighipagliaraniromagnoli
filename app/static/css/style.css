@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.5px;
 }
 body {
-  background: linear-gradient(135deg, #e0f7fa 0%, #fffde7 100%);
+  background: linear-gradient(135deg, #7c9de6 0%, #badfe5 100%);
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -16,7 +16,7 @@ body {
 .hero-section {
   position: relative;
   height: 60vh;
-  background: linear-gradient(120deg, #008b8b 60%, #00bcd4 100%);
+  background: linear-gradient(120deg, #7da3e9 60%, #4a47e0 100%);
   color: #fff;
   padding: 60px 0 40px 0;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
@@ -89,7 +89,7 @@ body {
 }
 
 .footer {
-  background: #218838;
+  background: #1604b6;
   color: #fff;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -104,7 +104,7 @@ body {
 }
 
 .hero-section a:hover {
-  background: #18632a;
+  background: #00ff3c;
   color: #e0ffe7 !important;
 }
 
