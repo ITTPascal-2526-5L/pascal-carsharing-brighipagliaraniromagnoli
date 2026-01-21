@@ -72,7 +72,7 @@
             <ul>
             {% for p in passengers %}
                 <li>
-                    {{ p.nome }} {{ p.cognome }} - Email: {{ p.email }} - Età: {{ p.eta }} - CF: {{ p.CF }} - Prelievo: {{ p.prelievo }}
+                    {{ p.nome }} {{ p.cognome }} - Email: {{ p.email }} - Età: {{ p.eta }} - CF: {{ p.CF }} - Prelievo: {{ p.prelievo }} - Punti: {{ p.punti }}
                 </li>
             {% else %}
                 <li>Nessun passeggero registrato.</li>
@@ -85,7 +85,7 @@
             <ul>
             {% for d in drivers %}
                 <li>
-                    {{ d.nome }} {{ d.cognome }} - Email: {{ d.email }} - Età: {{ d.eta }} - CF: {{ d.CF }} - Nr Patente: {{ d.NrPatente }}
+                    {{ d.nome }} {{ d.cognome }} - Email: {{ d.email }} - Età: {{ d.eta }} - CF: {{ d.CF }} - Nr Patente: {{ d.NrPatente }} - Punti: {{ d.punti }}
                 </li>
             {% else %}
                 <li>Nessun driver registrato.</li>
