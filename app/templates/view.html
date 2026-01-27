@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <link rel="stylesheet" href="/app/static/css/styleForView.css">
     <meta charset="UTF-8">
     <title>Visualizzazione Database</title>
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
             background: #f4f6f9;
             margin: 0;
             padding: 30px;
@@ -40,7 +41,7 @@
             padding: 20px;
             margin: 20px 0;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .card h2 {
@@ -59,9 +60,10 @@
         }
     </style>
 </head>
+
 <body>
 
-    <a href="{{ url_for('main.homepage') }}" class="home-link">← Torna alla Home</a>
+    <a href="{{ url_for('main.homepage') }}" class="home-link" style="color: #000000;">← Torna alla Home</a>
 
     <h1>Dati Registrati</h1>
 
@@ -70,43 +72,46 @@
         <div class="card">
             <h2>Passengers</h2>
             <ul>
-            {% for p in passengers %}
+                {% for p in passengers %}
                 <li>
-                    {{ p.nome }} {{ p.cognome }} - Email: {{ p.email }} - Età: {{ p.eta }} - CF: {{ p.CF }} - Prelievo: {{ p.prelievo }} - Punti: {{ p.punti }}
+                    {{ p.nome }} {{ p.cognome }} - Email: {{ p.email }} - Età: {{ p.eta }} - CF: {{ p.CF }} - Prelievo:
+                    {{ p.prelievo }} - Punti: {{ p.punti }}
                 </li>
-            {% else %}
+                {% else %}
                 <li>Nessun passeggero registrato.</li>
-            {% endfor %}
+                {% endfor %}
             </ul>
         </div>
 
         <div class="card">
             <h2>Drivers</h2>
             <ul>
-            {% for d in drivers %}
+                {% for d in drivers %}
                 <li>
-                    {{ d.nome }} {{ d.cognome }} - Email: {{ d.email }} - Età: {{ d.eta }} - CF: {{ d.CF }} - Nr Patente: {{ d.NrPatente }} - Punti: {{ d.punti }}
+                    {{ d.nome }} {{ d.cognome }} - Email: {{ d.email }} - Età: {{ d.eta }} - CF: {{ d.CF }} - Nr
+                    Patente: {{ d.NrPatente }} - Punti: {{ d.punti }}
                 </li>
-            {% else %}
+                {% else %}
                 <li>Nessun driver registrato.</li>
-            {% endfor %}
+                {% endfor %}
             </ul>
         </div>
 
         <div class="card">
             <h2>Schools</h2>
             <ul>
-            {% for s in schools %}
+                {% for s in schools %}
                 <li>
                     {{ s.nomeScuola }} - Indirizzo: {{ s.indirizzo }} - Suffix: {{ s.suffix }}
                 </li>
-            {% else %}
+                {% else %}
                 <li>Nessuna scuola registrata.</li>
-            {% endfor %}
+                {% endfor %}
             </ul>
         </div>
 
     </div>
 
 </body>
+
 </html>

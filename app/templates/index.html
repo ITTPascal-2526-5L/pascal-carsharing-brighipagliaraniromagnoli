@@ -10,11 +10,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
-        body, html {
-            font-family: 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif !important;
+        body,
+        html {
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive !important;
         }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif !important;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive !important;
             letter-spacing: -0.5px;
         }
     </style>
@@ -22,7 +29,8 @@
 
 <body>
     <!-- Pulsanti angolari -->
-    <a href="{{ url_for('registration.view') }}" class="btn btn-info btn-lg text-reset text-decoration-none header-btn fixed-corner start-0 top-0">
+    <a href="{{ url_for('registration.view') }}"
+        class="btn btn-info btn-lg text-reset text-decoration-none header-btn fixed-corner start-0 top-0">
         <i class="bi bi-people-fill me-2"></i>Guarda Iscritti
     </a>
     <a href="{{ url_for('login.login') }}" class="btn btn-success btn-lg header-btn fixed-corner end-0 top-0">
@@ -37,17 +45,21 @@
                 <div class="alert alert-warning p-2 rounded-3 shadow-sm fw-bold d-inline-block mb-4">
                     <i class="bi bi-megaphone-fill me-2"></i>
                     Offerta speciale: scarica l'app Pascal CarSharing e ottieni un viaggio gratis!
-                    <a href="https://www.viaggiogratis.com/it" class="fw-bold text-decoration-underline">Scopri di più</a>
+                    <a href="https://www.viaggiogratis.com/it" class="fw-bold text-decoration-underline">Scopri di
+                        più</a>
                 </div>
                 <h2 class="mb-4">Scegli il tuo ruolo per iniziare</h2>
                 <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
-                    <a href="{{ url_for('registration.registration_passenger') }}" class="btn btn-success role-btn shadow passenger-btn">
+                    <a href="{{ url_for('registration.registration_passenger') }}"
+                        class="btn btn-success role-btn shadow passenger-btn">
                         <i class="bi bi-person-fill me-2"></i>Passenger
                     </a>
-                    <a href="{{ url_for('registration.registration_driver') }}" class="btn btn-danger role-btn shadow driver-btn">
+                    <a href="{{ url_for('registration.registration_driver') }}"
+                        class="btn btn-danger role-btn shadow driver-btn">
                         <i class="bi bi-car-front-fill me-2"></i>Driver
                     </a>
-                    <a href="{{ url_for('registration.registration_school') }}" class="btn btn-info role-btn shadow school-btn text-white">
+                    <a href="{{ url_for('registration.registration_school') }}"
+                        class="btn btn-info role-btn shadow school-btn text-white">
                         <i class="bi bi-mortarboard-fill me-2"></i>School
                     </a>
                 </div>
@@ -59,11 +71,14 @@
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded-4 shadow" alt="Car Sharing">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                        class="img-fluid rounded-4 shadow" alt="Car Sharing">
                 </div>
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-3">Cos'è Pascal CarSharing?</h3>
-                    <p>Pascal CarSharing è il servizio innovativo che ti permette di condividere i tuoi viaggi con altri studenti, insegnanti e famiglie. Risparmia sui costi, riduci l'inquinamento e incontra nuove persone!</p>
+                    <p>Pascal CarSharing è il servizio innovativo che ti permette di condividere i tuoi viaggi con altri
+                        studenti, insegnanti e famiglie. Risparmia sui costi, riduci l'inquinamento e incontra nuove
+                        persone!</p>
                     <ul class="list-unstyled mb-0">
                         <li><i class="bi bi-check-circle-fill text-success me-2"></i>Viaggi sicuri e assicurati</li>
                         <li><i class="bi bi-check-circle-fill text-success me-2"></i>Gestione semplice da app e web</li>
@@ -77,11 +92,13 @@
         <div class="container">
             <div class="row g-4 align-items-center flex-md-row-reverse">
                 <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded-4 shadow" alt="Ambiente">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+                        class="img-fluid rounded-4 shadow" alt="Ambiente">
                 </div>
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-3">Perché scegliere noi?</h3>
-                    <p>Con Pascal CarSharing contribuisci a un futuro più verde. Ogni viaggio condiviso riduce le emissioni di CO₂ e aiuta la tua comunità scolastica a essere più sostenibile.</p>
+                    <p>Con Pascal CarSharing contribuisci a un futuro più verde. Ogni viaggio condiviso riduce le
+                        emissioni di CO₂ e aiuta la tua comunità scolastica a essere più sostenibile.</p>
                     <ul class="list-unstyled mb-0">
                         <li><i class="bi bi-tree-fill text-success me-2"></i>Risparmio economico e ambientale</li>
                         <li><i class="bi bi-people-fill text-primary me-2"></i>Comunità attiva e solidale</li>
@@ -95,12 +112,14 @@
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded-4 shadow" alt="Come funziona">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+                        class="img-fluid rounded-4 shadow" alt="Come funziona">
                 </div>
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-3">Come funziona?</h3>
                     <ol class="mb-0">
-                        <li>Registrati come <span class="text-success">Passenger</span>, <span class="text-danger">Driver</span> o <span class="text-info">School</span></li>
+                        <li>Registrati come <span class="text-success">Passenger</span>, <span
+                                class="text-danger">Driver</span> o <span class="text-info">School</span></li>
                         <li>Crea o cerca un viaggio</li>
                         <li>Conferma la tua partecipazione e viaggia in sicurezza!</li>
                     </ol>
@@ -113,11 +132,11 @@
     </footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"></script>
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"></script>
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
