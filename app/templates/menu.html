@@ -1,103 +1,141 @@
 <!doctype html>
 <html lang="it">
+
 <head>
-    <title>Area Personale</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-      .dashboard-card { border-radius: 1.2rem; box-shadow: 0 4px 18px rgba(44,62,80,0.10); background: #fff; padding: 1.5rem 1.2rem; margin-bottom: 1.2rem; }
-      .dashboard-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
-      .quick-action { min-width: 120px; }
-      .stat-card { background: #f8f9fa; border-radius: 1rem; padding: 1rem 0.5rem; margin: 0 0.5rem; box-shadow: 0 2px 8px rgba(44,62,80,0.06); }
-      .stat-value { font-size: 1.3rem; font-weight: 700; }
-      .stat-label { font-size: 0.95rem; color: #666; }
-    </style>
+  <title>Area Personale</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      font-family: 'Product Sans', sans-serif;
+    }
+
+    .dashboard-card {
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 18px rgba(44, 62, 80, 0.10);
+      background: #fff;
+      padding: 1.5rem 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .dashboard-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .quick-action {
+      min-width: 120px;
+    }
+
+    .stat-card {
+      background: #f8f9fa;
+      border-radius: 1rem;
+      padding: 1rem 0.5rem;
+      margin: 0 0.5rem;
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+    }
+
+    .stat-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-2">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="/">CarSharing</a>
-    <div class="ms-auto">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="{{ url_for('login.logout') }}">Logout</a>
-    </div>
-  </div>
-</nav>
-<main class="container py-2">
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <div class="alert alert-warning p-2 rounded-3 shadow-sm fw-bold mb-3 text-center" style="background:linear-gradient(90deg,#fffbe7,#ffe082);color:#7c5c00;">
-        <i class="bi bi-megaphone-fill me-2"></i> Visita il sito del Pascal per rimanere sempre aggiornato! <a href="https://www.ispascalcomandini.it/itt-b-pascal/" class="fw-bold text-decoration-underline">Scopri</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-2">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">CarSharing</a>
+      <div class="ms-auto">
+        <a class="nav-link nav-link-custom" href="/">Home</a>
+        <a class="nav-link nav-link-custom" href="{{ url_for('login.logout') }}">Logout</a>
       </div>
-      <div class="dashboard-card text-center mb-2">
-        {% if user_type == 'driver' %}
+    </div>
+  </nav>
+  <main class="container py-2">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="alert alert-warning p-2 rounded-3 shadow-sm fw-bold mb-3 text-center"
+          style="background:linear-gradient(90deg,#fffbe7,#ffe082);color:#7c5c00;">
+          <i class="bi bi-megaphone-fill me-2"></i> Visita il sito del Pascal per rimanere sempre aggiornato! <a
+            href="https://www.ispascalcomandini.it/itt-b-pascal/" class="fw-bold text-decoration-underline">Scopri</a>
+        </div>
+        <div class="dashboard-card text-center mb-2">
+          {% if user_type == 'driver' %}
           <div class="dashboard-icon text-danger"><i class="bi bi-car-front-fill"></i></div>
           <span class="badge bg-danger mb-2">Driver</span>
-        {% elif user_type == 'passenger' %}
+          {% elif user_type == 'passenger' %}
           <div class="dashboard-icon text-success"><i class="bi bi-person-fill"></i></div>
           <span class="badge bg-success mb-2">Passeggero</span>
-        {% elif user_type == 'school' %}
+          {% elif user_type == 'school' %}
           <div class="dashboard-icon text-info"><i class="bi bi-building"></i></div>
           <span class="badge bg-info mb-2">Scuola</span>
-        {% endif %}
-        <h2 class="mb-2 mt-1">Ciao, {{ user }}!</h2>
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-info text-center" role="alert">{{ message }}</div>
-            {% endfor %}
           {% endif %}
-        {% endwith %}
-        <div class="row justify-content-center mt-3 mb-2 g-2">
-          <div class="col-4 col-md-3 quick-action">
-            <a href="/view" class="btn btn-outline-dark w-100"><i class="bi bi-list-task"></i><br>Corse</a>
+          <h2 class="mb-2 mt-1">Ciao, {{ user }}!</h2>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-info text-center" role="alert">{{ message }}</div>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <div class="row justify-content-center mt-3 mb-2 g-2">
+            <div class="col-4 col-md-3 quick-action">
+              <a href="/view" class="btn btn-outline-dark w-100"><i class="bi bi-list-task"></i><br>Corse</a>
+            </div>
+            <div class="col-4 col-md-3 quick-action">
+              <a href="#" class="btn btn-outline-dark w-100"><i class="bi bi-person-gear"></i><br>Profilo</a>
+            </div>
+            <div class="col-4 col-md-3 quick-action">
+              <a href="/negozio" class="btn btn-outline-dark w-100"><i class="bi bi-cart-check"></i><br>Negozio</a>
+            </div>
           </div>
-          <div class="col-4 col-md-3 quick-action">
-            <a href="#" class="btn btn-outline-dark w-100"><i class="bi bi-person-gear"></i><br>Profilo</a>
+          <div class="row justify-content-center mt-2 mb-1 g-2">
+            <div class="col-4 stat-card">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Viaggi</div>
+            </div>
+            <div class="col-4 stat-card">
+              <div class="stat-value">{{ punti }}</div>
+              <div class="stat-label">Punti</div>
+            </div>
+            <div class="col-4 stat-card">
+              <div class="stat-value">12</div>
+              <div class="stat-label">Premi disponibili</div>
+            </div>
           </div>
-          <div class="col-4 col-md-3 quick-action">
-            <a href="/negozio" class="btn btn-outline-dark w-100"><i class="bi bi-cart-check"></i><br>Negozio</a>
+          <div class="text-center mb-3">
+            <button class="btn btn-outline-info" type="button"
+              onclick="document.getElementById('istruzioni-punti').classList.toggle('d-none')">
+              <i class="bi bi-info-circle"></i> Come guadagnare punti?
+            </button>
           </div>
-        </div>
-        <div class="row justify-content-center mt-2 mb-1 g-2">
-          <div class="col-4 stat-card">
-            <div class="stat-value">3</div>
-            <div class="stat-label">Viaggi</div>
+          <div id="istruzioni-punti" class="alert alert-info d-none text-start" style="max-width:600px;margin:auto;">
+            <strong>Come guadagnare punti CarSharing:</strong>
+            <ul class="mb-1">
+              <li>1 punto per ogni viaggio effettuato come passeggero</li>
+              <li>2 punti per ogni viaggio effettuato come driver</li>
+              <li>Bonus settimanali per chi partecipa attivamente</li>
+              <li>Eventi speciali e promozioni</li>
+            </ul>
+            <span class="small">I punti possono essere spesi nel Negozio premi!</span>
           </div>
-          <div class="col-4 stat-card">
-            <div class="stat-value">{{ punti }}</div>
-            <div class="stat-label">Punti</div>
-          </div>
-          <div class="col-4 stat-card">
-            <div class="stat-value">12</div>
-            <div class="stat-label">Premi disponibili</div>
-          </div>
-        </div>
-        <div class="text-center mb-3">
-          <button class="btn btn-outline-info" type="button" onclick="document.getElementById('istruzioni-punti').classList.toggle('d-none')">
-            <i class="bi bi-info-circle"></i> Come guadagnare punti?
-          </button>
-        </div>
-        <div id="istruzioni-punti" class="alert alert-info d-none text-start" style="max-width:600px;margin:auto;">
-          <strong>Come guadagnare punti CarSharing:</strong>
-          <ul class="mb-1">
-            <li>1 punto per ogni viaggio effettuato come passeggero</li>
-            <li>2 punti per ogni viaggio effettuato come driver</li>
-            <li>Bonus settimanali per chi partecipa attivamente</li>
-            <li>Eventi speciali e promozioni</li>
-          </ul>
-          <span class="small">I punti possono essere spesi nel Negozio premi!</span>
         </div>
       </div>
     </div>
-  </div>
-</main>
-<footer class="footer text-center text-dark py-3 bg-white mt-3">
-  <p class="mb-0">© 2026 CarSharing - Area Personale</p>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </main>
+  <footer class="footer text-center text-dark py-3 bg-white mt-3">
+    <p class="mb-0">© 2026 CarSharing - Area Personale</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

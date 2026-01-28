@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/google-sans');
+
 body,
 html,
 h1,
@@ -26,7 +28,7 @@ li,
 .role-btn,
 .header-btn,
 .corner-btn {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive !important;
+  font-family: 'Product Sans', sans-serif;
 }
 
 h1,
@@ -232,6 +234,18 @@ body {
   position: fixed !important;
   z-index: 1050;
   margin: 1.2rem;
+}
+
+.nav-link-custom {
+  color: #000000 !important;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.nav-link-custom:hover {
+  text-decoration: underline;
+  opacity: 0.8;
 }
 
 .fixed-corner.top-0.start-0 {

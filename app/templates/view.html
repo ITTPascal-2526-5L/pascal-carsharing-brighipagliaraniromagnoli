@@ -2,12 +2,11 @@
 <html lang="it">
 
 <head>
-    <link rel="stylesheet" href="/app/static/css/styleForView.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleForView.css') }}">
     <meta charset="UTF-8">
     <title>Visualizzazione Database</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
             background: #f4f6f9;
             margin: 0;
             padding: 30px;
