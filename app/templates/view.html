@@ -1,116 +1,99 @@
-<!DOCTYPE html>
-<html lang="it">
+{% extends "base.html" %}
 
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleForView.css') }}">
-    <meta charset="UTF-8">
-    <title>Visualizzazione Database</title>
-    <style>
-        body {
-            background: #f4f6f9;
-            margin: 0;
-            padding: 30px;
-            color: #333;
-        }
+{% block title %}Dati Registrati - Pascal CarSharing{% endblock %}
 
-        .home-link {
-            color: #008b8b;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-        }
+{% block styles %}
+<style>
+    .view-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 0;
+    }
 
-        .home-link:hover {
-            text-decoration: underline;
-        }
+    .view-card {
+        background: white;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
 
-        h1 {
-            margin-top: 20px;
-            text-align: center;
-            color: #1a3d5c;
-        }
+    .view-card h2 {
+        color: #1a3d5c;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+    .data-list {
+        list-style: none;
+        padding: 0;
+    }
 
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+    .data-item {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #f8f8f8;
+        font-size: 0.95rem;
+    }
 
-        .card h2 {
-            margin-top: 0;
-            color: #3b7dd8;
-        }
+    .data-item:last-child {
+        border-bottom: none;
+    }
+</style>
+{% endblock %}
 
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        li {
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-        }
-    </style>
-</head>
-
-<body>
-
-    <a href="{{ url_for('main.homepage') }}" class="home-link" style="color: #000000;">← Torna alla Home</a>
-
-    <h1>Dati Registrati</h1>
-
-    <div class="container">
-
-        <div class="card">
-            <h2>Passengers</h2>
-            <ul>
-                {% for p in passengers %}
-                <li>
-                    {{ p.nome }} {{ p.cognome }} - Email: {{ p.email }} - Età: {{ p.eta }} - CF: {{ p.CF }} - Prelievo:
-                    {{ p.prelievo }} - Punti: {{ p.punti }}
-                </li>
-                {% else %}
-                <li>Nessun passeggero registrato.</li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Drivers</h2>
-            <ul>
-                {% for d in drivers %}
-                <li>
-                    {{ d.nome }} {{ d.cognome }} - Email: {{ d.email }} - Età: {{ d.eta }} - CF: {{ d.CF }} - Nr
-                    Patente: {{ d.NrPatente }} - Punti: {{ d.punti }}
-                </li>
-                {% else %}
-                <li>Nessun driver registrato.</li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Schools</h2>
-            <ul>
-                {% for s in schools %}
-                <li>
-                    {{ s.nomeScuola }} - Indirizzo: {{ s.indirizzo }} - Suffix: {{ s.suffix }}
-                </li>
-                {% else %}
-                <li>Nessuna scuola registrata.</li>
-                {% endfor %}
-            </ul>
-        </div>
-
+{% block content %}
+<div class="container view-container">
+    <div class="mb-4">
+        <a href="{{ url_for('login.menu') }}" class="btn btn-outline-dark">
+            <i class="bi bi-arrow-left me-2"></i>Torna alla Dashboard
+        </a>
     </div>
 
-</body>
+    <h1 class="text-center mb-5">Dati Sistema Pascal</h1>
 
-</html>
+    <div class="view-card">
+        <h2><i class="bi bi-people me-2 text-success"></i>Passeggeri</h2>
+        <ul class="data-list">
+            {% for p in passengers %}
+            <li class="data-item">
+                <strong>{{ p.nome }} {{ p.cognome }}</strong><br>
+                <small class="text-muted">Email: {{ p.email }} | Età: {{ p.eta }} | CF: {{ p.CF }} | Prelievo: {{
+                    p.prelievo }} | Punti: {{ p.punti }}</small>
+            </li>
+            {% else %}
+            <li class="data-item text-muted">Nessun passeggero registrato.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="view-card">
+        <h2><i class="bi bi-car-front me-2 text-danger"></i>Driver</h2>
+        <ul class="data-list">
+            {% for d in drivers %}
+            <li class="data-item">
+                <strong>{{ d.nome }} {{ d.cognome }}</strong><br>
+                <small class="text-muted">Email: {{ d.email }} | Età: {{ d.eta }} | CF: {{ d.CF }} | Nr Patente: {{
+                    d.NrPatente }} | Punti: {{ d.punti }}</small>
+            </li>
+            {% else %}
+            <li class="data-item text-muted">Nessun driver registrato.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="view-card">
+        <h2><i class="bi bi-mortarboard me-2 text-info"></i>Scuole</h2>
+        <ul class="data-list">
+            {% for s in schools %}
+            <li class="data-item">
+                <strong>{{ s.nomeScuola }}</strong><br>
+                <small class="text-muted">Indirizzo: {{ s.indirizzo }} | Suffix: {{ s.suffix }}</small>
+            </li>
+            {% else %}
+            <li class="data-item text-muted">Nessuna scuola registrata.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

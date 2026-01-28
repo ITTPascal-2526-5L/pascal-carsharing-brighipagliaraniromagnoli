@@ -124,11 +124,27 @@ body {
   background-color: #18632a;
 }
 
-.footer {
-  background: #1604b6;
-  color: #fff;
-  font-size: 1rem;
-  letter-spacing: 1px;
+.navbar {
+  background-color: #000000 !important;
+  padding: 0.8rem 0;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #ffffff !important;
+}
+
+.nav-link-custom {
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  color: #ffffff !important;
+  transition: all 0.2s ease;
+}
+
+.nav-link-custom:hover {
+  color: #badfe5 !important;
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 .hero-section a {
@@ -236,17 +252,6 @@ body {
   margin: 1.2rem;
 }
 
-.nav-link-custom {
-  color: #000000 !important;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease;
-}
-
-.nav-link-custom:hover {
-  text-decoration: underline;
-  opacity: 0.8;
-}
 
 .fixed-corner.top-0.start-0 {
   left: 0;

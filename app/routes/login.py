@@ -175,4 +175,34 @@ def acquista_premio():
     db.session.commit()
     return jsonify({"success": True, "codice": codice, "message": "Premio acquistato con successo!"})
 
+@login_bp.route("/crea_corsa", methods=["GET", "POST"])
+def crea_corsa():
+    username = session.get("username")
+    user_type = session.get("user_type")
+    if not username or user_type != "driver":
+        return redirect("/login")
+    
+    if request.method == "POST":
+        flash("La tua corsa è stata creata con successo!")
+        return redirect("/menu")
+        
+    return render_template("crea_corsa.html", user=username)
 
+@login_bp.route("/corse_disponibili", methods=["GET", "POST"])
+def corse_disponibili():
+    username = session.get("username")
+    user_type = session.get("user_type")
+    if not username or user_type != "passenger":
+        return redirect("/login")
+    
+    # Mock data for available rides
+    rides = [
+        {"id": 1, "driver": "Marco", "partenza": "Bologna", "arrivo": "Cesena", "raggio": 2},
+        {"id": 2, "driver": "Giacomo", "partenza": "Rimini", "arrivo": "Cesena", "raggio": 3}
+    ]
+    
+    if request.method == "POST":
+        flash("Richiesta inviata con successo!")
+        return redirect("/menu")
+        
+    return render_template("corse_disponibili.html", user=username, rides=rides)
