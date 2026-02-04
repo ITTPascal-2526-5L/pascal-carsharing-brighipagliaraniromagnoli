@@ -41,7 +41,7 @@ h6 {
 }
 
 body {
-  background: linear-gradient(135deg, #7c9de6 0%, #badfe5 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -49,11 +49,16 @@ body {
   flex-direction: column;
 }
 
+body.body-index {
+  background: #000000 !important;
+  color: #ffffff;
+}
+
 .hero-section {
   position: relative;
   height: 60vh;
-  background: linear-gradient(120deg, #7da3e9 60%, #4a47e0 100%);
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
   padding: 60px 0 40px 0;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
   min-height: 70vh;
