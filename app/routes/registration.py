@@ -37,8 +37,11 @@ def registration_driver():
         CF = request.form.get("CF")
         NrPatente = request.form.get("Pat")
         password = request.form.get("password")
+        marca_auto = request.form.get("marca_auto")
+        modello_auto = request.form.get("modello_auto")
 
-        if not (nome and cognome and email and eta and CF and NrPatente and password):
+
+        if not (nome and cognome and email and eta and CF and NrPatente and password and marca_auto and modello_auto):
             flash("Tutti i campi sono obbligatori.")
             return render_template("driverLogin.html")
 
@@ -50,13 +53,16 @@ def registration_driver():
             "eta": eta,
             "CF": CF,
             "NrPatente": NrPatente,
-            "password": password
+            "password": password,
+            "marca_auto" : marca_auto,
+            "modello_auto" : modello_auto
+
         }
         save_to_json(driver_data, "driver.json")
 
         # Salvataggio su DB
         driver = Driver(nome=nome, cognome=cognome, email=email, eta=int(eta),
-                        CF=CF, NrPatente=NrPatente, password=password)
+                        CF=CF, NrPatente=NrPatente, password=password,marca_auto=marca_auto, modello_auto=modello_auto)
         db.session.add(driver)
         db.session.commit()
 

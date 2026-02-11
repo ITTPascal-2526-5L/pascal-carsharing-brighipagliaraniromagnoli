@@ -43,5 +43,25 @@
         "nomeScuola": "Cactus",
         "indirizzo": "Via desertica, 102",
         "suffix": "c22"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "er",
+        "suffix": "234"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "1",
+        "suffix": "12"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "via prova p",
+        "suffix": "12"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "via prova p",
+        "suffix": "12"
     }
 ]

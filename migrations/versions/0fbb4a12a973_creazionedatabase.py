@@ -1,8 +1,8 @@
-"""Inizio
+"""CreazioneDatabase
 
-Revision ID: d3da32342446
+Revision ID: 0fbb4a12a973
 Revises: 
-Create Date: 2026-01-05 16:26:27.872288
+Create Date: 2026-02-11 18:08:16.733200
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'd3da32342446'
+revision = '0fbb4a12a973'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -27,6 +27,9 @@ def upgrade():
     sa.Column('CF', sa.String(length=50), nullable=False),
     sa.Column('NrPatente', sa.String(length=50), nullable=False),
     sa.Column('password', sa.String(length=100), nullable=False),
+    sa.Column('marca_auto', sa.String(length=100), nullable=False),
+    sa.Column('modello_auto', sa.String(length=100), nullable=False),
+    sa.Column('punti', sa.Integer(), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('CF'),
     sa.UniqueConstraint('NrPatente'),
@@ -41,6 +44,7 @@ def upgrade():
     sa.Column('CF', sa.String(length=50), nullable=False),
     sa.Column('prelievo', sa.String(length=200), nullable=True),
     sa.Column('password', sa.String(length=100), nullable=False),
+    sa.Column('punti', sa.Integer(), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('CF'),
     sa.UniqueConstraint('email')

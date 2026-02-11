@@ -12,9 +12,11 @@ class Driver(db.Model):
     CF = db.Column(db.String(50), unique=True, nullable=False)
     NrPatente = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
+    marca_auto = db.Column(db.String(100), nullable=False)
+    modello_auto = db.Column(db.String(100), nullable=False)
     punti = db.Column(db.Integer, default=0)
 
-    def __init__(self, nome, cognome, email, eta, CF, NrPatente, password, punti=0):
+    def __init__(self, nome, cognome, email, eta, CF, NrPatente, password,marca_auto, modello_auto, punti=0):
         self.nome = nome
         self.cognome = cognome
         self.email = email
@@ -22,4 +24,6 @@ class Driver(db.Model):
         self.CF = CF
         self.NrPatente = NrPatente
         self.password = password
+        self.marca_auto = marca_auto
+        self.modello_auto = modello_auto
         self.punti = punti

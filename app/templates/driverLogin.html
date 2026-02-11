@@ -54,17 +54,26 @@
                             <label class="form-label text-dark">Numero Patente</label>
                             <input type="text" class="form-control" name="Pat" placeholder="PN1234567" required>
                         </div>
-                        <div class="col-12">
-                            <label class="form-label text-dark">Filtra Auto</label>
-                            <input type="text" class="form-control mb-2" id="filtro_auto"
-                                placeholder="Cerca marca o modello...">
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label text-dark">Seleziona Auto (Marca-Modello)</label>
-                            <select class="form-select" name="auto" id="auto_select" required>
-                                <option value="">Seleziona auto...</option>
+                        <div class="col-md-6">
+                            <label class="form-label text-dark">Marca</label>
+                            <select class="form-select" id="marca_select" name="marca_auto" required>
+                                <option value="">Seleziona marca...</option>
+                                <option value="Fiat">Fiat</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Audi">Audi</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
                             </select>
                         </div>
+
+                        <div class="col-md-6">
+                        <label class="form-label text-dark">Modello</label>
+                        <select class="form-select" id="modello_select" name="modello_auto" required>
+                            <option value="">Seleziona modello...</option>
+                        </select>
+                        </div>
+
+
                         <div class="col-12">
                             <label class="form-label text-dark">Password</label>
                             <input type="password" class="form-control" name="password" placeholder="••••••••" required>
@@ -85,4 +94,53 @@
         </div>
     </div>
 </div>
+<script>
+document.getElementById("marca_select").addEventListener("change", function () {
+    let marca = this.value;
+    let modelloSelect = document.getElementById("modello_select");
+
+    modelloSelect.innerHTML = '<option value="">Caricamento...</option>';
+
+    if (!marca) {
+        modelloSelect.innerHTML = '<option value="">Seleziona modello...</option>';
+        return;
+    }
+
+    fetch("/api/models/" + marca)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Errore HTTP: " + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            modelloSelect.innerHTML = '<option value="">Seleziona modello...</option>';
+
+            if (!Array.isArray(data)) {
+                throw new Error("Risposta non valida");
+            }
+
+            data.forEach(model => {
+                let option = document.createElement("option");
+                option.value = model;
+                option.textContent = model;
+                modelloSelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Errore fetch:", error);
+            modelloSelect.innerHTML = '<option value="">Errore caricamento</option>';
+        });
+});
+
+
+document.querySelector("form").addEventListener("submit", function () {
+    let marca = document.getElementById("marca_select").value;
+    let modello = document.getElementById("modello_select").value;
+
+    // Passa marca e modello separati con |
+    document.getElementById("auto_hidden").value = marca + "|" + modello;
+});
+</script>
+
 {% endblock %}

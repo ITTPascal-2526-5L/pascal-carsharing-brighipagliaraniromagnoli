@@ -3,6 +3,7 @@ from .config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+
 db = SQLAlchemy()
 migrate = Migrate()
 
@@ -12,7 +13,9 @@ def create_app():
 
     db.init_app(app)
     migrate.init_app(app, db)
-    from .models import driver, passenger, school
+    from .models import Passenger, Driver, School
+
+    
 
     from .routes import blueprints
     for bp in blueprints:

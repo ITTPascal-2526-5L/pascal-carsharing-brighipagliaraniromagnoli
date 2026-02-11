@@ -52,5 +52,80 @@
         "CF": "statutoAlbertino",
         "NrPatente": "47482094a",
         "password": "senatore"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "m@ax.it",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "23456",
+        "password": "1234"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "m@ax.it",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "23456",
+        "password": "1234",
+        "marca_auto": "Toyota",
+        "modello_auto": "Sequoia"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "m@ax.it",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "23456",
+        "password": "1234",
+        "marca_auto": "Toyota",
+        "modello_auto": "Sequoia"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "m@ax.it",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "re",
+        "password": "no",
+        "marca_auto": "Fiat",
+        "modello_auto": "Strada"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "re@a",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "re",
+        "password": "1234",
+        "marca_auto": "Fiat",
+        "modello_auto": "500L"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "provaura@a",
+        "eta": "12",
+        "CF": "mrmx4563",
+        "NrPatente": "sdqerq31",
+        "password": "ret",
+        "marca_auto": "BMW",
+        "modello_auto": "750xi"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "a@a",
+        "eta": "21",
+        "CF": "sfjaspickapsmc",
+        "NrPatente": "acscdca",
+        "password": "wasp",
+        "marca_auto": "Fiat",
+        "modello_auto": "Strada"
     }
 ]
