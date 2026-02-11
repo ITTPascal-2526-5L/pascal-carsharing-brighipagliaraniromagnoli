@@ -41,7 +41,7 @@ h6 {
 }
 
 body {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #ffffff;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -50,17 +50,16 @@ body {
 }
 
 body.body-index {
-  background: #000000 !important;
-  color: #ffffff;
+  background: #ffffff !important;
+  color: #000000;
 }
 
 .hero-section {
   position: relative;
   height: 60vh;
-  background: #000000;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   padding: 60px 0 40px 0;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -94,7 +93,7 @@ body.body-index {
 }
 
 .footer {
-  background: #000000;
+  background: #212529;
   color: #fff;
   margin-top: auto;
   font-size: 1rem;
@@ -130,7 +129,7 @@ body.body-index {
 }
 
 .navbar {
-  background-color: #000000 !important;
+  background-color: #212529 !important;
   padding: 0.8rem 0;
 }
 
@@ -147,7 +146,7 @@ body.body-index {
 }
 
 .nav-link-custom:hover {
-  color: #badfe5 !important;
+  color: #4be7ff !important;
   text-decoration: none;
   opacity: 0.8;
 }
@@ -302,7 +301,7 @@ body.body-index {
 }
 
 body.auth-page {
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%) !important;
+  background: #ffffff !important;
 }
 
 body.auth-page .form-label {
