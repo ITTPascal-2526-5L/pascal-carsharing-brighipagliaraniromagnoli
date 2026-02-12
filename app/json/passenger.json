@@ -70,5 +70,14 @@
         "CF": "MRMARCO",
         "prelievo": "kuyk",
         "password": "23"
+    },
+    {
+        "nome": "Luca",
+        "cognome": "Pulga",
+        "email": "lucs.pulgs@aura.it",
+        "eta": "18",
+        "CF": "PLGLCU03G30C573X",
+        "prelievo": "Via dell'Aura 67",
+        "password": "1234"
     }
 ]

@@ -127,5 +127,16 @@
         "password": "wasp",
         "marca_auto": "Fiat",
         "modello_auto": "Strada"
+    },
+    {
+        "nome": "Carmine",
+        "cognome": "Coccimiglio",
+        "email": "cocci@aura.it",
+        "eta": "18",
+        "CF": "CCCCCCAURA",
+        "NrPatente": "FO64738",
+        "password": "1234",
+        "marca_auto": "Audi",
+        "modello_auto": "RS 6 Avant"
     }
 ]

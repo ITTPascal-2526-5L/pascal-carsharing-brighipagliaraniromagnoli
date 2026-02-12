@@ -1,8 +1,8 @@
-"""CreazioneDatabase
+"""Aura
 
-Revision ID: 0fbb4a12a973
+Revision ID: c9db9670e0bd
 Revises: 
-Create Date: 2026-02-11 18:08:16.733200
+Create Date: 2026-02-12 13:34:06.617809
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '0fbb4a12a973'
+revision = 'c9db9670e0bd'
 down_revision = None
 branch_labels = None
 depends_on = None
