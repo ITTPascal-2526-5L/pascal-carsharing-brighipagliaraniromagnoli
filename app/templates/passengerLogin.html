@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Registrazione Passeggero - Pascal CarSharing{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-7 col-lg-6">
+      <div class="card shadow-sm p-4 text-center">
+        <div class="mb-3">
+          <div class="display-4 text-success"><i class="bi bi-person-fill"></i></div>
+          <span class="badge bg-success mb-2">Passeggero</span>
+          <h2 class="fw-bold">Registrazione</h2>
+        </div>
+
+        <div class="alert alert-success p-2 rounded-3 shadow-sm fw-bold mb-4 small">
+          <i class="bi bi-megaphone-fill me-2"></i> Partecipa al concorso "Viaggia e Vinci"!
+          <a href="https://inviaggioconte.eurospin-viaggi.it/"
+            class="fw-bold text-decoration-underline text-success">Scopri di più</a>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-info py-2" role="alert">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form action="/registration_passenger" method="POST" class="text-start">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label text-dark">Nome</label>
+              <input type="text" class="form-control" name="nome" placeholder="Nome" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-dark">Cognome</label>
+              <input type="text" class="form-control" name="cognome" placeholder="Cognome" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label text-dark">Email</label>
+              <input type="email" class="form-control" name="email" placeholder="email@esempio.com" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label text-dark">Età</label>
+              <input type="number" class="form-control" name="eta" placeholder="18" required>
+            </div>
+            <div class="col-md-8">
+              <label class="form-label text-dark">Codice Fiscale</label>
+              <input type="text" class="form-control" name="CF" placeholder="CF" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label text-dark">Punto di Prelievo (Pickup)</label>
+              <input type="text" class="form-control" name="prelievo" placeholder="Via/Piazza..." required>
+            </div>
+            <div class="col-12">
+              <label class="form-label text-dark">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="••••••••" required>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success w-100 py-2 fw-bold">Registrati <i
+                class="bi bi-person-plus ms-1"></i></button>
+          </div>
+        </form>
+
+        <div class="mt-4">
+          <a href="/" class="btn btn-link text-decoration-none text-muted small">
+            <i class="bi bi-arrow-left me-1"></i>Torna alla Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

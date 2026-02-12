@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Corse Disponibili - Pascal CarSharing{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm p-4 mb-5">
+                <h2 class="fw-bold mb-4 text-center"><i class="bi bi-search me-2 text-success"></i>Corse Disponibili
+                </h2>
+
+                <div class="list-group">
+                    {% for ride in rides %}
+                    <div class="list-group-item list-group-item-action p-3 mb-2 border rounded shadow-xs">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1 fw-bold">Percorso: {{ ride.partenza }} <i class="bi bi-arrow-right"></i> {{
+                                ride.arrivo }}</h5>
+                            <small class="text-success fw-bold">Raggio: {{ ride.raggio }} km</small>
+                        </div>
+                        <p class="mb-1">Driver: <strong>{{ ride.driver }}</strong></p>
+                        <button class="btn btn-success btn-sm mt-2">Prenota Posto</button>
+                    </div>
+                    {% else %}
+                    <p class="text-center text-muted">Nessuna corsa disponibile al momento.</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="card shadow-sm p-4">
+                <h2 class="fw-bold mb-4 text-center"><i class="bi bi-send me-2 text-primary"></i>Richiedi una Corsa</h2>
+                <form action="/corse_disponibili" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label text-dark fw-bold">Punto di Partenza</label>
+                        <input type="text" class="form-control" name="partenza" placeholder="Da dove parti?" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-dark fw-bold">Punto di Arrivo</label>
+                        <input type="text" class="form-control" name="arrivo" placeholder="Dove vuoi andare?" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5 py-2 fw-bold">Invia Richiesta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

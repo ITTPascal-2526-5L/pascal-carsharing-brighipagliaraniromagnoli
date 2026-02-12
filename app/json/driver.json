@@ -1,0 +1,142 @@
+[
+    {
+        "nome": "Maxwell",
+        "cognome": "El",
+        "email": "cactusmao12@gmail.com",
+        "eta": "21",
+        "CF": "Staccionata",
+        "NrPatente": "23456",
+        "password": "23"
+    },
+    {
+        "nome": "AuraSquad",
+        "cognome": "dsafrew",
+        "email": "samuele.romagnoli.stud@ispascalcomandini.it",
+        "eta": "54",
+        "CF": "yrthu",
+        "NrPatente": "432",
+        "password": "jhmjkuòo8lii7o .8o"
+    },
+    {
+        "nome": "Luca",
+        "cognome": "Pulga",
+        "email": "lucapulga@luca.com",
+        "eta": "78",
+        "CF": "32",
+        "NrPatente": "123548",
+        "password": "password"
+    },
+    {
+        "nome": "Maxwells",
+        "cognome": "El",
+        "email": "cactusmao12@gmail.com",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "23456",
+        "password": "rebublica"
+    },
+    {
+        "nome": "Giacomo",
+        "cognome": "Leopardi",
+        "email": "s@a",
+        "eta": "34",
+        "CF": "LPdGcm",
+        "NrPatente": "56au12",
+        "password": "password"
+    },
+    {
+        "nome": "Virgilio",
+        "cognome": "Latino",
+        "email": "lupo@romano",
+        "eta": "56",
+        "CF": "statutoAlbertino",
+        "NrPatente": "47482094a",
+        "password": "senatore"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "m@ax.it",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "23456",
+        "password": "1234"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "m@ax.it",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "23456",
+        "password": "1234",
+        "marca_auto": "Toyota",
+        "modello_auto": "Sequoia"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "m@ax.it",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "23456",
+        "password": "1234",
+        "marca_auto": "Toyota",
+        "modello_auto": "Sequoia"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "m@ax.it",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "re",
+        "password": "no",
+        "marca_auto": "Fiat",
+        "modello_auto": "Strada"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "re@a",
+        "eta": "21",
+        "CF": "mrmx4563",
+        "NrPatente": "re",
+        "password": "1234",
+        "marca_auto": "Fiat",
+        "modello_auto": "500L"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "provaura@a",
+        "eta": "12",
+        "CF": "mrmx4563",
+        "NrPatente": "sdqerq31",
+        "password": "ret",
+        "marca_auto": "BMW",
+        "modello_auto": "750xi"
+    },
+    {
+        "nome": "max",
+        "cognome": "well",
+        "email": "a@a",
+        "eta": "21",
+        "CF": "sfjaspickapsmc",
+        "NrPatente": "acscdca",
+        "password": "wasp",
+        "marca_auto": "Fiat",
+        "modello_auto": "Strada"
+    },
+    {
+        "nome": "Carmine",
+        "cognome": "Coccimiglio",
+        "email": "cocci@aura.it",
+        "eta": "18",
+        "CF": "CCCCCCAURA",
+        "NrPatente": "FO64738",
+        "password": "1234",
+        "marca_auto": "Audi",
+        "modello_auto": "RS 6 Avant"
+    }
+]

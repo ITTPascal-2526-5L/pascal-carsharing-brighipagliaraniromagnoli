@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}Negozio CarSharing{% endblock %}
+
+{% block styles %}
+<style>
+  .shop-card {
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 18px rgba(44, 62, 80, 0.10);
+    background: #fff;
+    padding: 1.5rem 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .shop-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .shop-btn {
+    min-width: 120px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="shop-card text-center mb-4">
+        <h2 class="mb-3">Negozio premi</h2>
+        <p class="mb-4">Usa i tuoi punti per riscattare premi esclusivi dedicati agli utenti CarSharing!</p>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <div class="shop-icon text-success mb-2"><i class="bi bi-cup-hot"></i></div>
+                <h5 class="card-title">Buono Colazione Bar Pascal</h5>
+                <p class="card-text small text-muted">Goditi una colazione gratis al bar della scuola.</p>
+                <div class="mb-3"><span class="badge bg-success">20 punti</span></div>
+                <button class="btn btn-outline-success shop-btn w-100"
+                  onclick="acquistaPremio('colazione', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <div class="shop-icon text-primary mb-2"><i class="bi bi-bus-front"></i></div>
+                <h5 class="card-title">Biglietto Autobus</h5>
+                <p class="card-text small text-muted">Un biglietto per il trasporto pubblico locale.</p>
+                <div class="mb-3"><span class="badge bg-primary">35 punti</span></div>
+                <button class="btn btn-outline-primary shop-btn w-100"
+                  onclick="acquistaPremio('bus', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <div class="shop-icon text-warning mb-2"><i class="bi bi-fuel-pump"></i></div>
+                <h5 class="card-title">Buono Carburante</h5>
+                <p class="card-text small text-muted">Ricevi un buono sconto per il rifornimento.</p>
+                <div class="mb-3"><span class="badge bg-warning text-dark">50 punti</span></div>
+                <button class="btn btn-outline-warning shop-btn w-100"
+                  onclick="acquistaPremio('carburante', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 mt-3">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <div class="shop-icon text-danger mb-2"><i class="bi bi-gear"></i></div>
+                <h5 class="card-title">Check-up Auto Gratuito</h5>
+                <p class="card-text small text-muted">Controllo gratuito presso officina convenzionata.</p>
+                <div class="mb-3"><span class="badge bg-danger">60 punti</span></div>
+                <button class="btn btn-outline-danger shop-btn w-100"
+                  onclick="acquistaPremio('checkup', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <div class="shop-icon text-info mb-2"><i class="bi bi-umbrella"></i></div>
+                <h5 class="card-title">Ombrello Pascal CarSharing</h5>
+                <p class="card-text small text-muted">L'ombrello ufficiale per i tuoi viaggi in ogni stagione.</p>
+                <div class="mb-3"><span class="badge bg-info text-dark">40 punti</span></div>
+                <button class="btn btn-outline-info shop-btn w-100"
+                  onclick="acquistaPremio('ombrello', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <div class="shop-icon text-secondary mb-2"><i class="bi bi-gift"></i></div>
+                <h5 class="card-title">Gadget Pascal CarSharing</h5>
+                <p class="card-text small text-muted">Scegli tra portachiavi, borraccia o t-shirt brandizzata.</p>
+                <div class="mb-3"><span class="badge bg-secondary">25 punti</span></div>
+                <button class="btn btn-outline-secondary shop-btn w-100"
+                  onclick="acquistaPremio('gadget', this)">Acquista</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 text-center">
+          <a href="/menu" class="btn btn-outline-dark"><i class="bi bi-arrow-left me-2"></i> Torna al Menu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function acquistaPremio(premio, btn) {
+    btn.disabled = true;
+    fetch('/acquista_premio', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ premio })
+    })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          alert('Premio acquistato! Codice riscatto: ' + data.codice);
+        } else {
+          alert(data.message);
+        }
+        btn.disabled = false;
+      })
+      .catch(() => { alert('Errore di rete.'); btn.disabled = false; });
+  }
+</script>
+{% endblock %}

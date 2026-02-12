@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Pascal CarSharing - Home{% endblock %}
+{% block body_class %}body-index{% endblock %}
+
+{% block content %}
+<header class="hero-section bg-white py-5">
+    <div class="container">
+        <div class="content text-center d-flex flex-column align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold mb-3">Pascal CarSharing</h1>
+            <p class="lead mb-4">Condividi viaggi, risparmia e aiuta l’ambiente</p>
+            <div class="alert alert-warning p-2 rounded-3 shadow-sm fw-bold d-inline-block mb-4">
+                <i class="bi bi-megaphone-fill me-2"></i>
+                Offerta speciale: scarica l'app Pascal CarSharing e ottieni un viaggio gratis!
+                <a href="https://www.viaggiogratis.com/it" class="fw-bold text-decoration-underline">Scopri di
+                    più</a>
+            </div>
+            <h2 class="mb-4">Scegli il tuo ruolo per iniziare</h2>
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                <a href="{{ url_for('registration.registration_passenger') }}"
+                    class="btn btn-success role-btn shadow passenger-btn">
+                    <i class="bi bi-person-fill me-2"></i>Passenger
+                </a>
+                <a href="{{ url_for('registration.registration_driver') }}"
+                    class="btn btn-danger role-btn shadow driver-btn">
+                    <i class="bi bi-car-front-fill me-2"></i>Driver
+                </a>
+                <a href="{{ url_for('registration.registration_school') }}"
+                    class="btn btn-info role-btn shadow school-btn text-white">
+                    <i class="bi bi-mortarboard-fill me-2"></i>School
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Sezione informazioni fittizie -->
+<section class="info-section py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                    class="img-fluid rounded-4 shadow" alt="Car Sharing">
+            </div>
+            <div class="col-md-6">
+                <h3 class="fw-bold mb-3">Cos'è Pascal CarSharing?</h3>
+                <p>Pascal CarSharing è il servizio innovativo che ti permette di condividere i tuoi viaggi con altri
+                    studenti, insegnanti e famiglie. Risparmia sui costi, riduci l'inquinamento e incontra nuove
+                    persone!</p>
+                <ul class="list-unstyled mb-0">
+                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Viaggi sicuri e assicurati</li>
+                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Gestione semplice da app e web</li>
+                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Supporto 24/7</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="info-section py-5">
+    <div class="container">
+        <div class="row g-4 align-items-center flex-md-row-reverse">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+                    class="img-fluid rounded-4 shadow" alt="Ambiente">
+            </div>
+            <div class="col-md-6">
+                <h3 class="fw-bold mb-3">Perché scegliere noi?</h3>
+                <p>Con Pascal CarSharing contribuisci a un futuro più verde. Ogni viaggio condiviso riduce le
+                    emissioni di CO₂ e aiuta la tua comunità scolastica a essere più sostenibile.</p>
+                <ul class="list-unstyled mb-0">
+                    <li><i class="bi bi-tree-fill text-success me-2"></i>Risparmio economico e ambientale</li>
+                    <li><i class="bi bi-people-fill text-primary me-2"></i>Comunità attiva e solidale</li>
+                    <li><i class="bi bi-award-fill text-warning me-2"></i>Premi e incentivi per i più attivi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="info-section py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+                    class="img-fluid rounded-4 shadow" alt="Come funziona">
+            </div>
+            <div class="col-md-6">
+                <h3 class="fw-bold mb-3">Come funziona?</h3>
+                <ol class="mb-0">
+                    <li>Registrati come <span class="text-success">Passenger</span>, <span
+                            class="text-danger">Driver</span> o <span class="text-info">School</span></li>
+                    <li>Crea o cerca un viaggio</li>
+                    <li>Conferma la tua partecipazione e viaggia in sicurezza!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

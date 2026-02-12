@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}Registrazione Driver - Pascal CarSharing{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-sm p-4 text-center">
+                <div class="mb-3">
+                    <div class="display-4 text-danger"><i class="bi bi-car-front-fill"></i></div>
+                    <span class="badge bg-danger mb-2">Driver</span>
+                    <h2 class="fw-bold">Registrazione</h2>
+                </div>
+
+                <div class="alert alert-warning p-2 rounded-3 shadow-sm fw-bold mb-4 small">
+                    <i class="bi bi-megaphone-fill me-2"></i> Vinci un buono carburante!
+                    <a href="https://www.enilive.it/business/multicard-carburante"
+                        class="fw-bold text-decoration-underline text-dark">Partecipa ora</a>
+                </div>
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-info py-2" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <form action="/registration_driver" method="POST" class="text-start">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label text-dark">Nome</label>
+                            <input type="text" class="form-control" name="nome" placeholder="Nome" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-dark">Cognome</label>
+                            <input type="text" class="form-control" name="cognome" placeholder="Cognome" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label text-dark">Email</label>
+                            <input type="email" class="form-control" name="email" placeholder="email@esempio.com"
+                                required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label text-dark">Età</label>
+                            <input type="number" class="form-control" name="eta" placeholder="18" required>
+                        </div>
+                        <div class="col-md-8">
+                            <label class="form-label text-dark">Codice Fiscale</label>
+                            <input type="text" class="form-control" name="CF" placeholder="CF" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label text-dark">Numero Patente</label>
+                            <input type="text" class="form-control" name="Pat" placeholder="PN1234567" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-dark">Marca</label>
+                            <select class="form-select" id="marca_select" name="marca_auto" required>
+                                <option value="">Seleziona marca...</option>
+                                <option value="Fiat">Fiat</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Audi">Audi</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                        <label class="form-label text-dark">Modello</label>
+                        <select class="form-select" id="modello_select" name="modello_auto" required>
+                            <option value="">Seleziona modello...</option>
+                        </select>
+                        </div>
+
+
+                        <div class="col-12">
+                            <label class="form-label text-dark">Password</label>
+                            <input type="password" class="form-control" name="password" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-danger w-100 py-2 fw-bold">Registrati <i
+                                class="bi bi-person-plus ms-1"></i></button>
+                    </div>
+                </form>
+
+                <div class="mt-4">
+                    <a href="/" class="btn btn-link text-decoration-none text-muted small">
+                        <i class="bi bi-arrow-left me-1"></i>Torna alla Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById("marca_select").addEventListener("change", function () {
+    let marca = this.value;
+    let modelloSelect = document.getElementById("modello_select");
+
+    modelloSelect.innerHTML = '<option value="">Caricamento...</option>';
+
+    if (!marca) {
+        modelloSelect.innerHTML = '<option value="">Seleziona modello...</option>';
+        return;
+    }
+
+    fetch("/api/models/" + marca)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Errore HTTP: " + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            modelloSelect.innerHTML = '<option value="">Seleziona modello...</option>';
+
+            if (!Array.isArray(data)) {
+                throw new Error("Risposta non valida");
+            }
+
+            data.forEach(model => {
+                let option = document.createElement("option");
+                option.value = model;
+                option.textContent = model;
+                modelloSelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Errore fetch:", error);
+            modelloSelect.innerHTML = '<option value="">Errore caricamento</option>';
+        });
+});
+
+
+document.querySelector("form").addEventListener("submit", function () {
+    let marca = document.getElementById("marca_select").value;
+    let modello = document.getElementById("modello_select").value;
+
+    // Passa marca e modello separati con |
+    document.getElementById("auto_hidden").value = marca + "|" + modello;
+});
+</script>
+
+{% endblock %}

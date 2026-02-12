@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Registrazione Scuola - Pascal CarSharing{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-7 col-lg-6">
+      <div class="card shadow-sm p-4 text-center">
+        <div class="mb-3">
+          <div class="display-4 text-info"><i class="bi bi-mortarboard-fill"></i></div>
+          <span class="badge bg-info mb-2 text-white">Scuola</span>
+          <h2 class="fw-bold">Registrazione</h2>
+        </div>
+
+        <div class="alert alert-primary p-2 rounded-3 shadow-sm fw-bold mb-4 small">
+          <i class="bi bi-megaphone-fill me-2"></i> Sconto scuole partner!
+          <a href="https://www.ispascalcomandini.it/itt-b-pascal/"
+            class="fw-bold text-decoration-underline text-info">Scopri</a>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-info py-2" role="alert">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form action="/registration_school" method="POST" class="text-start">
+          <div class="row g-3">
+            <div class="col-12">
+              <label class="form-label text-dark">Nome Scuola</label>
+              <input type="text" class="form-control" name="nomeScuola" placeholder="ITT Pascal" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label text-dark">Indirizzo Sede</label>
+              <input type="text" class="form-control" name="indirizzo" placeholder="Via Roma, 1..." required>
+            </div>
+            <div class="col-12">
+              <label class="form-label text-dark">Suffisso Email / Codice Identificativo</label>
+              <input type="text" class="form-control" name="suffix" placeholder="@scuola.it" required>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-info w-100 py-2 fw-bold text-white">Registrati <i
+                class="bi bi-person-plus ms-1"></i></button>
+          </div>
+        </form>
+
+        <div class="mt-4">
+          <a href="/" class="btn btn-link text-decoration-none text-muted small">
+            <i class="bi bi-arrow-left me-1"></i>Torna alla Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

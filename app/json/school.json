@@ -1,0 +1,67 @@
+[
+    {
+        "nomeScuola": "ITT",
+        "indirizzo": "Via Monte Cavallo",
+        "suffix": "ispascalcomandini"
+    },
+    {
+        "nomeScuola": "ITTs",
+        "indirizzo": "plaza major",
+        "suffix": "esp"
+    },
+    {
+        "nomeScuola": "Scuola di Ziz",
+        "indirizzo": "Valle del Cavallo 128",
+        "suffix": "@fhusdi,com"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "via prova p",
+        "suffix": "provaSuff"
+    },
+    {
+        "nomeScuola": "Via Della Piazza 234",
+        "indirizzo": "Via Della Piazza 234",
+        "suffix": "scuola@madonna.it"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "1",
+        "suffix": "12"
+    },
+    {
+        "nomeScuola": "Prova",
+        "indirizzo": "12",
+        "suffix": "q"
+    },
+    {
+        "nomeScuola": "Prova",
+        "indirizzo": "2",
+        "suffix": "22"
+    },
+    {
+        "nomeScuola": "Cactus",
+        "indirizzo": "Via desertica, 102",
+        "suffix": "c22"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "er",
+        "suffix": "234"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "1",
+        "suffix": "12"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "via prova p",
+        "suffix": "12"
+    },
+    {
+        "nomeScuola": "prova",
+        "indirizzo": "via prova p",
+        "suffix": "12"
+    }
+]

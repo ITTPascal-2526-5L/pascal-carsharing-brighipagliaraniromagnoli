@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Dati Registrati - Pascal CarSharing{% endblock %}
+
+{% block styles %}
+<style>
+    .view-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 0;
+    }
+
+    .view-card {
+        background: white;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .view-card h2 {
+        color: #1a3d5c;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .data-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .data-item {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #f8f8f8;
+        font-size: 0.95rem;
+    }
+
+    .data-item:last-child {
+        border-bottom: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container view-container">
+    <div class="mb-4">
+        <a href="{{ url_for('login.menu') }}" class="btn btn-outline-dark">
+            <i class="bi bi-arrow-left me-2"></i>Torna alla Dashboard
+        </a>
+    </div>
+
+    <h1 class="text-center mb-5">Dati Sistema Pascal</h1>
+
+    <div class="view-card">
+        <h2><i class="bi bi-people me-2 text-success"></i>Passeggeri</h2>
+        <ul class="data-list">
+            {% for p in passengers %}
+            <li class="data-item">
+                <strong>{{ p.nome }} {{ p.cognome }}</strong><br>
+                <small class="text-muted">Email: {{ p.email }} | Età: {{ p.eta }} | CF: {{ p.CF }} | Prelievo: {{
+                    p.prelievo }} | Punti: {{ p.punti }}</small>
+            </li>
+            {% else %}
+            <li class="data-item text-muted">Nessun passeggero registrato.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="view-card">
+        <h2><i class="bi bi-car-front me-2 text-danger"></i>Driver</h2>
+        <ul class="data-list">
+            {% for d in drivers %}
+            <li class="data-item">
+                <strong>{{ d.nome }} {{ d.cognome }}</strong><br>
+                <small class="text-muted">Email: {{ d.email }} | Età: {{ d.eta }} | CF: {{ d.CF }} | Nr Patente: {{
+                    d.NrPatente }}|Marca Auto: {{d.marca_auto}} |Modello Auto: {{d.modello_auto}} | Punti: {{ d.punti }}</small>
+            </li>
+            {% else %}
+            <li class="data-item text-muted">Nessun driver registrato.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="view-card">
+        <h2><i class="bi bi-mortarboard me-2 text-info"></i>Scuole</h2>
+        <ul class="data-list">
+            {% for s in schools %}
+            <li class="data-item">
+                <strong>{{ s.nomeScuola }}</strong><br>
+                <small class="text-muted">Indirizzo: {{ s.indirizzo }} | Suffix: {{ s.suffix }}</small>
+            </li>
+            {% else %}
+            <li class="data-item text-muted">Nessuna scuola registrata.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

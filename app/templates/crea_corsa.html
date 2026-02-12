@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Crea Corsa - Pascal CarSharing{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+    #map {
+        height: 400px;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .address-input-group {
+        margin-bottom: 0.75rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm p-4">
+                <h2 class="fw-bold mb-4 text-center"><i class="bi bi-plus-circle me-2 text-primary"></i>Crea Nuova Corsa
+                </h2>
+
+                <form action="/crea_corsa" method="POST" id="ride-form">
+                    <div id="address-container">
+                        <label class="form-label text-dark fw-bold">Indirizzi della corsa</label>
+                        <div class="address-input-group d-flex gap-2">
+                            <input type="text" class="form-control" name="addresses[]" placeholder="Indirizzo Partenza"
+                                required>
+                        </div>
+                        <div class="address-input-group d-flex gap-2">
+                            <input type="text" class="form-control" name="addresses[]" placeholder="Tappa Intermedia"
+                                required>
+                        </div>
+                        <div class="address-input-group d-flex gap-2">
+                            <input type="text" class="form-control" name="addresses[]" placeholder="Indirizzo Arrivo"
+                                required>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-outline-primary btn-sm mb-4" onclick="addAddressField()">
+                        <i class="bi bi-plus"></i> Aggiungi Indirizzo
+                    </button>
+
+                    <div class="mb-4">
+                        <label for="radius" class="form-label text-dark fw-bold">Raggio di deviazione (km)</label>
+                        <select class="form-select" id="radius" name="radius">
+                            <option value="1">1 km</option>
+                            <option value="2">2 km</option>
+                            <option value="3">3 km</option>
+                            <option value="4">4 km</option>
+                            <option value="5">5 km</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-dark fw-bold">Anteprima Percorso</label>
+                        <div id="map"></div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5 py-2 fw-bold">Conferma Creazione</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    var map = L.map('map').setView([44.1396, 12.2435], 13); // Default view on Cesena
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    function addAddressField() {
+        const container = document.getElementById('address-container');
+        const div = document.createElement('div');
+        div.className = 'address-input-group d-flex gap-2';
+        div.innerHTML = `
+            <input type="text" class="form-control" name="addresses[]" placeholder="Altra Tappa" required>
+            <button type="button" class="btn btn-outline-danger" onclick="this.parentElement.remove()"><i class="bi bi-trash"></i></button>
+        `;
+        container.appendChild(div);
+    }
+</script>
+{% endblock %}

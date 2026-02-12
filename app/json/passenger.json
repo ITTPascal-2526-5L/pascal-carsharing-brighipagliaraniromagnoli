@@ -1,0 +1,83 @@
+[
+    {
+        "nome": "dmk",
+        "cognome": "èfo",
+        "email": "sadfdaf@xn--padf-4oa",
+        "eta": "35",
+        "CF": "32",
+        "prelievo": "3",
+        "password": "r"
+    },
+    {
+        "nome": "Maxwells",
+        "cognome": "Mayor",
+        "email": "m@ax.it",
+        "eta": "11",
+        "CF": "mrmx4563",
+        "prelievo": "Roma",
+        "password": "11e"
+    },
+    {
+        "nome": "Lucs",
+        "cognome": "Pulgs",
+        "email": "lucapulga@luca.com",
+        "eta": "78",
+        "CF": "32",
+        "prelievo": "Via Roma 1, Roma",
+        "password": "password"
+    },
+    {
+        "nome": "prova",
+        "cognome": "q",
+        "email": "qw@a",
+        "eta": "123",
+        "CF": "15",
+        "prelievo": "123468",
+        "password": "12"
+    },
+    {
+        "nome": "Marco",
+        "cognome": "Snabl",
+        "email": "cactusmao12@gmail.com",
+        "eta": "16",
+        "CF": "snbmrc10e16c573h",
+        "prelievo": "via calcinaro 2121",
+        "password": "23"
+    },
+    {
+        "nome": "prova",
+        "cognome": "admin",
+        "email": "c@ad",
+        "eta": "1900",
+        "CF": "snbmrc10e16c573h",
+        "prelievo": "3123",
+        "password": "po"
+    },
+    {
+        "nome": "prova",
+        "cognome": "Snabl",
+        "email": "s@a",
+        "eta": "1900",
+        "CF": "statutoAlbertino",
+        "prelievo": "3123883450",
+        "password": "pollo"
+    },
+    {
+        "nome": "marco",
+        "cognome": "brighi",
+        "email": "cactusmao12@gmail.com",
+        "eta": "18",
+        "CF": "MRMARCO",
+        "prelievo": "kuyk",
+        "password": "23"
+    },
+    {
+        "nome": "Luca",
+        "cognome": "Pulga",
+        "email": "lucs.pulgs@aura.it",
+        "eta": "18",
+        "CF": "PLGLCU03G30C573X",
+        "prelievo": "Via dell'Aura 67",
+        "password": "1234"
+    }
+]
